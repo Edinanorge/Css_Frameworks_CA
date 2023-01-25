@@ -1,0 +1,114 @@
+@import "variables.scss";
+
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+.fs-6 {
+  font-size: $fs-6;
+}
+//..... login page.....//
+.login-main {
+  height: 90vh;
+
+  form {
+    max-width: 28rem;
+  }
+}
+
+.bg-input-color {
+  background-color: $bg-input-color;
+}
+
+//..... home page....//
+// nav
+.navbar {
+  .current i {
+    color: $secondary;
+  }
+  i {
+    font-size: 1.5rem;
+  }
+  .nav-bg {
+    background: $nav-bg;
+  }
+  .navbar-brand img {
+    width: 2rem;
+  }
+  .form-control {
+    border-radius: 1.5rem;
+  }
+
+  .profil-img {
+    width: 2rem;
+    height: 2rem;
+    object-fit: cover;
+  }
+  .nav-item:hover,
+  .search:hover {
+    background-color: $gray-800;
+  }
+}
+
+// main
+.profil-extra-info img {
+  width: 5rem;
+  height: 5rem;
+  object-fit: cover;
+}
+// create post
+.add-post {
+  input {
+    padding: 0.7rem;
+  }
+  .btn-emoji {
+    margin-right: -2.7rem;
+    z-index: 9;
+    transition: all 0.4s ease;
+
+    &:hover {
+      background-color: $secondary;
+    }
+  }
+
+  .btn-image {
+    margin-left: -2.5rem;
+    transition: all 0.4s ease;
+    &:hover {
+      background-color: $secondary;
+    }
+  }
+}
+// contacts
+.contacts img,
+.feed-img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+// feeds
+.feed {
+  .card-link {
+    transition: all 0.4s ease;
+    &:hover {
+      background-color: $gray-700;
+    }
+  }
+}
+.card-img {
+  border-radius: 0;
+  height: 200px;
+  max-width: 100%;
+  object-fit: cover;
+}
+//.... profil page .....//
+.profil {
+  .profil-picture {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+  }
+  .gallery img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
+}

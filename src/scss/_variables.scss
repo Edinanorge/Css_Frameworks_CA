@@ -1,0 +1,38 @@
+// theme-colors
+$primary: #3a015c;
+$secondary: #db9ffe;
+
+$white: #fff;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #cbcfd2;
+$gray-700: #495057;
+$gray-800: #1a1a1a;
+$gray-900: #111111;
+$black: #000;
+
+$light: $gray-100;
+$dark: $gray-900;
+
+$body-bg: $gray-900;
+$body-color: $white;
+
+$nav-bg: $black;
+$card-bg: $gray-800;
+
+// form input redesign
+$bg-input-color: #222;
+$border-color: $gray-700;
+$border-radius: 0.6rem;
+
+// typografy
+$text-muted: #adb5bd;
+$font-family-sans-serif: "Roboto", sans-serif;
+$fs-6: 0.75rem;
+
+//list-group
+$list-group-color: $text-muted;
+$list-group-bg: $body-bg;

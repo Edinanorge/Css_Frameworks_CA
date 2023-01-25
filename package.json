@@ -1,0 +1,34 @@
+{
+  "name": "social-media-app",
+  "version": "1.0.0",
+  "description": "CSS frameworks ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "sass src/scss:dist/css",
+    "watch": "sass --watch src/scss:dist/css & live-server "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Edinanorge/Css_Frameworks_CA.git"
+  },
+  "keywords": [
+    "social",
+    "media",
+    "bootstrap",
+    "sass"
+  ],
+  "author": "Edina Isztojka",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Edinanorge/Css_Frameworks_CA/issues"
+  },
+  "homepage": "https://github.com/Edinanorge/Css_Frameworks_CA#readme",
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "sass": "^1.57.1"
+  },
+  "dependencies": {
+    "bootstrap": "^5.2.3"
+  }
+}
