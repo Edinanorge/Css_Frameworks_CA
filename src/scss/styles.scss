@@ -1,31 +1,39 @@
 @import "variables.scss";
 
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
+// general
 .fs-6 {
   font-size: $fs-6;
-}
-//..... login page.....//
-.login-main {
-  height: 90vh;
-
-  form {
-    max-width: 28rem;
-  }
 }
 
 .bg-input-color {
   background-color: $bg-input-color;
 }
 
+@mixin image-size($height, $widht, $fit) {
+  height: $height;
+  width: $widht;
+  object-fit: $fit;
+}
+
+//..... login page.....//
+.login-main {
+  height: 90vh;
+  form {
+    max-width: 28rem;
+  }
+}
+
 //..... home page....//
 // nav
 .navbar {
-  .current i {
-    color: $secondary;
-  }
   i {
     font-size: 1.5rem;
   }
+  .current i {
+    color: $secondary;
+  }
+
   .nav-bg {
     background: $nav-bg;
   }
@@ -37,9 +45,7 @@
   }
 
   .profil-img {
-    width: 2rem;
-    height: 2rem;
-    object-fit: cover;
+    @include image-size(2rem, 2rem, cover);
   }
   .nav-item:hover,
   .search:hover {
@@ -49,28 +55,27 @@
 
 // main
 .profil-extra-info img {
-  width: 5rem;
-  height: 5rem;
-  object-fit: cover;
+  @include image-size(5rem, 5rem, cover);
 }
 // create post
 .add-post {
   input {
     padding: 0.7rem;
   }
+
   .btn-emoji {
     margin-right: -2.7rem;
-    z-index: 9;
-    transition: all 0.4s ease;
-
-    &:hover {
-      background-color: $secondary;
-    }
   }
 
   .btn-image {
     margin-left: -2.5rem;
+  }
+
+  .btn-emoji,
+  .btn-image {
+    z-index: 9;
     transition: all 0.4s ease;
+
     &:hover {
       background-color: $secondary;
     }
@@ -79,9 +84,7 @@
 // contacts
 .contacts img,
 .feed-img {
-  width: 50px;
-  height: 50px;
-  object-fit: cover;
+  @include image-size(3rem, 3rem, cover);
 }
 
 // feeds
@@ -95,20 +98,15 @@
 }
 .card-img {
   border-radius: 0;
-  height: 200px;
-  max-width: 100%;
-  object-fit: cover;
+  @include image-size(15rem, 100%, cover);
 }
+
 //.... profil page .....//
 .profil {
   .profil-picture {
-    width: 300px;
-    height: 300px;
-    object-fit: cover;
+    @include image-size(20rem, 20rem, cover);
   }
   .gallery img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
+    @include image-size(15rem, 100%, cover);
   }
 }
