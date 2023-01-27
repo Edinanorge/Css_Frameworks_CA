@@ -1,11 +1,8 @@
 @import "variables.scss";
 
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
-// general
-.fs-6 {
-  font-size: $fs-6;
-}
 
+// general
 .bg-input-color {
   background-color: $bg-input-color;
 }
@@ -26,6 +23,9 @@
 
 //..... home page....//
 // nav
+.main-navigation {
+  background-color: $nav-bg;
+}
 .navbar {
   i {
     font-size: 1.5rem;
@@ -33,10 +33,10 @@
   .current i {
     color: $secondary;
   }
-
-  .nav-bg {
-    background: $nav-bg;
+  .nav {
+    background-color: $nav-bg;
   }
+
   .navbar-brand img {
     width: 2rem;
   }
@@ -88,6 +88,10 @@
 }
 
 // feeds
+main {
+  position: relative;
+}
+
 .feed {
   .card-link {
     transition: all 0.4s ease;
@@ -96,17 +100,26 @@
     }
   }
 }
+
 .card-img {
   border-radius: 0;
   @include image-size(15rem, 100%, cover);
 }
 
+// events
+
 //.... profil page .....//
 .profil {
   .profil-picture {
-    @include image-size(20rem, 20rem, cover);
+    @include image-size(15rem, 15rem, cover);
   }
   .gallery img {
     @include image-size(15rem, 100%, cover);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .main-navigation {
+    backdrop-filter: blur(5px);
   }
 }

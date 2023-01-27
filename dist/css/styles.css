@@ -7885,6 +7885,10 @@ textarea.form-control-lg {
   font-size: 1rem !important;
 }
 
+.fs-7 {
+  font-size: 0.75rem !important;
+}
+
 .fst-italic {
   font-style: italic !important;
 }
@@ -10769,10 +10773,6 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-.fs-6 {
-  font-size: 0.75rem;
-}
-
 .bg-input-color {
   background-color: #222;
 }
@@ -10784,14 +10784,18 @@ textarea.form-control-lg {
   max-width: 28rem;
 }
 
+.main-navigation {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
 .navbar i {
   font-size: 1.5rem;
 }
 .navbar .current i {
   color: #db9ffe;
 }
-.navbar .nav-bg {
-  background: #000;
+.navbar .nav {
+  background-color: rgba(0, 0, 0, 0.75);
 }
 .navbar .navbar-brand img {
   width: 2rem;
@@ -10841,6 +10845,10 @@ textarea.form-control-lg {
   object-fit: cover;
 }
 
+main {
+  position: relative;
+}
+
 .feed .card-link {
   transition: all 0.4s ease;
 }
@@ -10856,14 +10864,20 @@ textarea.form-control-lg {
 }
 
 .profil .profil-picture {
-  height: 20rem;
-  width: 20rem;
+  height: 15rem;
+  width: 15rem;
   object-fit: cover;
 }
 .profil .gallery img {
   height: 15rem;
   width: 100%;
   object-fit: cover;
+}
+
+@media only screen and (min-width: 768px) {
+  .main-navigation {
+    backdrop-filter: blur(5px);
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
