@@ -85,19 +85,19 @@
             </div>
             <!-- add posts form  -->
             <form class="d-flex flex-row add-post">
-              <button class="btn btn-emoji" type="button" aria-label="add emoji">
+              <button title="Add emoji" class="btn btn-emoji" type="button">
                 <i class="bi bi-emoji-smile"></i>
               </button>
               <input
                 class="form-control bg-input-color text-white rounded border ps-5"
                 type="text"
                 placeholder="What is on your mind?..."
-                aria-label="Create new post here."
+                title="Create new post."
               />
-              <button class="btn btn-image" type="button" aria-label="Add image or video">
+              <button title="Add image or video" class="btn btn-image" type="button">
                 <i class="bi bi-camera"></i>
               </button>
-              <button class="btn btn-primary border-primary ms-3" aria-label="send new post">
+              <button title="Send new post" class="btn btn-primary border-primary ms-3">
                 <i class="bi bi-send-fill"></i>
               </button>
             </form>
@@ -105,7 +105,7 @@
         </div>
 
         <!-- flex item 2  -->
-        <div class="contacts col ms-lg-5">
+        <div class="contacts col ms-lg-5 position-relative">
           <!-- contacts -->
           <p class="s-5 mt-5 text-start text-muted fs-5 ms-2">Contacts</p>
           <div class="contacts d-flex flex-sm-row flex-lg-column justify-content-center">
@@ -193,59 +193,215 @@
         </div>
         <!-- latest post-->
         <div class="col-12">
-          <p class="fs-4 text-muted mt-3">Latest posts</p>
-          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-1 gallery">
+          <p class="fs-5 text-muted mt-4 ms-2">My latest posts</p>
+          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-1 gallery">
             <div class="col">
-              <div class="card">
-                <img src="/src/images/feed1.jpg" alt="Post image" class="img-fluid" />
+              <div class="card bg-gray mx-auto feed mt-lg-3">
+                <div class="card-body">
+                  <img class="card-img mb-1" src="/src/images/feed1.jpg" alt="feed image" />
+                  <p class="mb-3 text-muted">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis dolorem saepe atque, beata.
+                    <span>👍 🙏</span>
+                  </p>
+                  <button title="Like" class="card-link text-white btn">
+                    <i class="bi bi-heart-fill"></i><span class="ms-1 fs-7 text-muted">244k</span>
+                  </button>
+                  <button title="Send message" class="card-link text-white btn">
+                    <i class="bi bi-chat-fill"></i>
+                    <span class="ms-1 fs-7 text-muted">78</span>
+                  </button>
+                  <button title="Share" class="card-link text-white btn">
+                    <i class="bi bi-share-fill"></i>
+                    <span class="ms-1 fs-7 text-muted">3</span>
+                  </button>
+                </div>
               </div>
             </div>
 
             <div class="col">
-              <div class="card">
-                <img src="/src/images/feed2.jpg" alt="Post image" class="img-fluid" />
+              <div class="card bg-gray mx-auto feed mt-lg-3">
+                <div class="card-body">
+                  <img class="card-img mb-1" src="/src/images/feed3.jpg" alt="feed image" />
+                  <p class="mb-3 text-muted">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis dolorem saepe atque, beata.
+                    <span>👍 🙏</span>
+                  </p>
+                  <button title="Like" class="card-link text-white btn">
+                    <i class="bi bi-heart-fill"></i><span class="ms-1 fs-7 text-muted">244k</span>
+                  </button>
+                  <button title="Send message" class="card-link text-white btn">
+                    <i class="bi bi-chat-fill"></i>
+                    <span class="ms-1 fs-7 text-muted">78</span>
+                  </button>
+                  <button title="Share" class="card-link text-white btn">
+                    <i class="bi bi-share-fill"></i>
+                    <span class="ms-1 fs-7 text-muted">3</span>
+                  </button>
+                </div>
               </div>
             </div>
 
             <div class="col">
-              <div class="card">
-                <img src="/src/images/feed3.jpg" alt="Post image" class="img-fluid" />
+              <div class="card bg-gray mx-auto feed mt-lg-3">
+                <div class="card-body">
+                  <img class="card-img mb-1" src="/src/images/feed2.jpg" alt="feed image" />
+                  <p class="mb-3 text-muted">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis dolorem saepe atque, beata.
+                    <span>👍 🙏</span>
+                  </p>
+                  <button title="Like" class="card-link text-white btn">
+                    <i class="bi bi-heart-fill"></i><span class="ms-1 fs-7 text-muted">244k</span>
+                  </button>
+                  <button title="Send message" class="card-link text-white btn">
+                    <i class="bi bi-chat-fill"></i>
+                    <span class="ms-1 fs-7 text-muted">78</span>
+                  </button>
+                  <button title="Share" class="card-link text-white btn">
+                    <i class="bi bi-share-fill"></i>
+                    <span class="ms-1 fs-7 text-muted">3</span>
+                  </button>
+                </div>
               </div>
             </div>
 
             <div class="col">
-              <div class="card">
-                <img src="/src/images/feed1.jpg" alt="Post image" class="img-fluid" />
+              <div class="card bg-gray mx-auto feed mt-lg-3">
+                <div class="card-body">
+                  <img class="card-img mb-1" src="/src/images/feed1.jpg" alt="feed image" />
+                  <p class="mb-3 text-muted">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis dolorem saepe atque, beata.
+                    <span>👍 🙏</span>
+                  </p>
+                  <button title="Like" class="card-link text-white btn">
+                    <i class="bi bi-heart-fill"></i><span class="ms-1 fs-7 text-muted">244k</span>
+                  </button>
+                  <button title="Send message" class="card-link text-white btn">
+                    <i class="bi bi-chat-fill"></i>
+                    <span class="ms-1 fs-7 text-muted">78</span>
+                  </button>
+                  <button title="Share" class="card-link text-white btn">
+                    <i class="bi bi-share-fill"></i>
+                    <span class="ms-1 fs-7 text-muted">3</span>
+                  </button>
+                </div>
               </div>
             </div>
 
             <div class="col">
-              <div class="card">
-                <img src="/src/images/feed2.jpg" alt="Post image" class="img-fluid" />
+              <div class="card bg-gray mx-auto feed mt-lg-3">
+                <div class="card-body">
+                  <img class="card-img mb-1" src="/src/images/feed3.jpg" alt="feed image" />
+                  <p class="mb-3 text-muted">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis dolorem saepe atque, beata.
+                    <span>👍 🙏</span>
+                  </p>
+                  <button title="Like" class="card-link text-white btn">
+                    <i class="bi bi-heart-fill"></i><span class="ms-1 fs-7 text-muted">244k</span>
+                  </button>
+                  <button title="Send message" class="card-link text-white btn">
+                    <i class="bi bi-chat-fill"></i>
+                    <span class="ms-1 fs-7 text-muted">78</span>
+                  </button>
+                  <button title="Share" class="card-link text-white btn">
+                    <i class="bi bi-share-fill"></i>
+                    <span class="ms-1 fs-7 text-muted">3</span>
+                  </button>
+                </div>
               </div>
             </div>
 
             <div class="col">
-              <div class="card">
-                <img src="/src/images/feed3.jpg" alt="Post image" class="img-fluid" />
+              <div class="card bg-gray mx-auto feed mt-lg-3">
+                <div class="card-body">
+                  <img class="card-img mb-1" src="/src/images/feed2.jpg" alt="feed image" />
+                  <p class="mb-3 text-muted">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis dolorem saepe atque, beata.
+                    <span>👍 🙏</span>
+                  </p>
+                  <button title="Like" class="card-link text-white btn">
+                    <i class="bi bi-heart-fill"></i><span class="ms-1 fs-7 text-muted">244k</span>
+                  </button>
+                  <button title="Send message" class="card-link text-white btn">
+                    <i class="bi bi-chat-fill"></i>
+                    <span class="ms-1 fs-7 text-muted">78</span>
+                  </button>
+                  <button title="Share" class="card-link text-white btn">
+                    <i class="bi bi-share-fill"></i>
+                    <span class="ms-1 fs-7 text-muted">3</span>
+                  </button>
+                </div>
               </div>
             </div>
 
             <div class="col">
-              <div class="card">
-                <img src="/src/images/feed1.jpg" alt="Post image" class="img-fluid" />
+              <div class="card bg-gray mx-auto feed mt-lg-3">
+                <div class="card-body">
+                  <p class="mb-1 mt-3 text-muted">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis dolorem saepe atque, beata.
+                    <span>👍 🙏</span>
+                  </p>
+
+                  <img class="card-img mb-3" src="/src/images/feed2.jpg" alt="feed image" />
+                  <button title="Like" class="card-link text-white btn">
+                    <i class="bi bi-heart-fill"></i><span class="ms-1 fs-7 text-muted">244k</span>
+                  </button>
+                  <button title="Send message" class="card-link text-white btn">
+                    <i class="bi bi-chat-fill"></i>
+                    <span class="ms-1 fs-7 text-muted">78</span>
+                  </button>
+                  <button title="Share" class="card-link text-white btn">
+                    <i class="bi bi-share-fill"></i>
+                    <span class="ms-1 fs-7 text-muted">3</span>
+                  </button>
+                </div>
               </div>
             </div>
 
             <div class="col">
-              <div class="card">
-                <img src="/src/images/feed3.jpg" alt="Post image" class="img-fluid" />
+              <div class="card bg-gray mx-auto feed mt-lg-3">
+                <div class="card-body">
+                  <p class="mb-1 mt-3 text-muted">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis dolorem saepe atque, beata.
+                    <span>👍 🙏</span>
+                  </p>
+
+                  <img class="card-img mb-3" src="/src/images/feed3.jpg" alt="feed image" />
+                  <button title="Like" class="card-link text-white btn">
+                    <i class="bi bi-heart-fill"></i><span class="ms-1 fs-7 text-muted">244k</span>
+                  </button>
+                  <button title="Send message" class="card-link text-white btn">
+                    <i class="bi bi-chat-fill"></i>
+                    <span class="ms-1 fs-7 text-muted">78</span>
+                  </button>
+                  <button title="Share" class="card-link text-white btn">
+                    <i class="bi bi-share-fill"></i>
+                    <span class="ms-1 fs-7 text-muted">3</span>
+                  </button>
+                </div>
               </div>
             </div>
 
             <div class="col">
-              <div class="card">
-                <img src="/src/images/feed1.jpg" alt="Post image" class="img-fluid" />
+              <div class="card bg-gray mx-auto feed mt-lg-3">
+                <div class="card-body">
+                  <p class="mb-1 mt-3 text-muted">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis dolorem saepe atque, beata.
+                    <span>👍 🙏</span>
+                  </p>
+
+                  <img class="card-img mb-3" src="/src/images/feed1.jpg" alt="feed image" />
+                  <button title="Like" class="card-link text-white btn">
+                    <i class="bi bi-heart-fill"></i><span class="ms-1 fs-7 text-muted">244k</span>
+                  </button>
+                  <button title="Send message" href="#" class="card-link text-white btn">
+                    <i class="bi bi-chat-fill"></i>
+                    <span class="ms-1 fs-7 text-muted">78</span>
+                  </button>
+                  <button title="Share" href="#" class="card-link text-white btn">
+                    <i class="bi bi-share-fill"></i>
+                    <span class="ms-1 fs-7 text-muted">3</span>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -253,7 +409,7 @@
       </div>
     </main>
 
-    <footer class="footer mt-auto py-3 bg-dark text-center">
+    <footer class="footer mt-auto py-3 bg-dark text-center sticky-md-bottom">
       <div class="container">
         <span class="text-muted">Social Media&copy; copyright</span>
       </div>
