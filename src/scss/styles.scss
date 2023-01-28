@@ -59,25 +59,30 @@
 }
 // create post
 .add-post {
+  position: relative;
+
   input {
     padding: 0.7rem;
   }
 
   .btn-emoji {
-    margin-right: -2.7rem;
+    top: 10%;
+    left: 0.5rem;
   }
 
   .btn-image {
-    margin-left: -2.5rem;
+    right: 4rem;
+    top: 10%;
   }
 
   .btn-emoji,
   .btn-image {
+    position: absolute;
     z-index: 9;
     transition: all 0.4s ease;
 
     &:hover {
-      background-color: $secondary;
+      background-color: $primary;
     }
   }
 }

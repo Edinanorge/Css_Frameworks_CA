@@ -10819,23 +10819,29 @@ textarea.form-control-lg {
   object-fit: cover;
 }
 
+.add-post {
+  position: relative;
+}
 .add-post input {
   padding: 0.7rem;
 }
 .add-post .btn-emoji {
-  margin-right: -2.7rem;
+  top: 10%;
+  left: 0.5rem;
 }
 .add-post .btn-image {
-  margin-left: -2.5rem;
+  right: 4rem;
+  top: 10%;
 }
 .add-post .btn-emoji,
 .add-post .btn-image {
+  position: absolute;
   z-index: 9;
   transition: all 0.4s ease;
 }
 .add-post .btn-emoji:hover,
 .add-post .btn-image:hover {
-  background-color: #db9ffe;
+  background-color: #3a015c;
 }
 
 .contacts img,
