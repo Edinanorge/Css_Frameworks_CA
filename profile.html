@@ -16,7 +16,7 @@
         <div class="container-fluid">
           <!-- logo -->
           <a title="Social Media home" class="navbar-brand text-white fs-6 d-flex align-items-center" href="/home.html"
-            ><img src="/src/images/logo.png" alt="social media logo" class="me-1" />Social Media</a
+            ><img src="/src/images/logo.png" alt="social media logo" class="me-1 img-fluid" />Social Media</a
           >
           <!-- nav links / position fixed on mobil - sticky on descktop-->
           <ul class="nav d-flex justify-content-evenly align-items-center sm-w-100 fixed-bottom sticky-md-top ms-lg-5">
@@ -69,39 +69,42 @@
     <main class="container profil">
       <div class="row">
         <!-- flex item 1 -->
-        <div class="col col-lg-9">
-          <!-- profil img, details -->
-          <div class="text-center mt-5 px-lg-5">
-            <img src="/src/images/sara.jpg" alt="Profil picture" class="rounded-circle profil-picture mt-lg-5" />
-            <div class="py-5">
-              <p class="fs-4 text-white mb-0">Jessica Jhones</p>
-              <div class="col-12 w-100">
-                <p class="fs-7 mb-4 text-secondary">London, United Kingdom</p>
-                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                  <button type="button" class="btn btn-outline-light btn-sm px-4 me-sm-3">Edit profile</button>
-                  <a href="/index.html" type="button" class="btn btn-outline-light btn-sm px-4">Log out</a>
+        <div class="col col-lg-9 text-center align-self-center">
+          <div class="d-block d-md-flex justify-content-center mb-5">
+            <!-- profil img, details -->
+            <img src="/src/images/sara.jpg" alt="Profil picture" class="rounded-circle profil-picture" />
+            <div class="text-center mt-5 px-lg-5">
+              <div class="py-5">
+                <h1 class="fs-4 text-white mb-0">Jessica Jhones</h1>
+                <div class="col-12 w-100">
+                  <p class="fs-7 mb-4 text-secondary">London, United Kingdom</p>
+                  <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                    <button type="button" class="btn btn-outline-light btn-sm px-4 me-sm-3">Edit profile</button>
+                    <a href="/index.html" type="button" class="btn btn-outline-light btn-sm px-4">Log out</a>
+                  </div>
                 </div>
               </div>
             </div>
-            <!-- add posts form  -->
-            <form class="d-flex flex-row add-post">
-              <button title="Add emoji" class="btn btn-emoji" type="button">
-                <i class="bi bi-emoji-smile"></i>
-              </button>
-              <input
-                class="form-control bg-input-color text-white rounded border ps-5"
-                type="text"
-                placeholder="What is on your mind?..."
-                title="Create new post."
-              />
-              <button title="Add image or video" class="btn btn-image" type="button">
-                <i class="bi bi-camera"></i>
-              </button>
-              <button title="Send new post" class="btn btn-primary border-primary ms-3">
-                <i class="bi bi-send-fill"></i>
-              </button>
-            </form>
           </div>
+
+          <!-- add posts form  -->
+          <form class="d-flex flex-row add-post">
+            <button title="Add emoji" class="btn btn-emoji" type="button">
+              <i class="bi bi-emoji-smile"></i>
+            </button>
+            <input
+              class="form-control bg-input-color text-white rounded border ps-5"
+              type="text"
+              placeholder="What is on your mind?..."
+              title="Create new post."
+            />
+            <button title="Add image or video" class="btn btn-image" type="button">
+              <i class="bi bi-camera"></i>
+            </button>
+            <button title="Send new post" class="btn btn-primary border-primary ms-3">
+              <i class="bi bi-send-fill"></i>
+            </button>
+          </form>
         </div>
 
         <!-- flex item 2  -->
