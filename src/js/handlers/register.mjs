@@ -10,6 +10,7 @@ export function submitSignupForm() {
       const profile = Object.fromEntries(formData.entries());
 
       register(profile);
+      alert("Registered profile");
     });
   }
 }
