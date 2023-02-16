@@ -1,4 +1,7 @@
 export function load(key) {
-  JSON.parse(localStorage.getItem(key));
+  try {
+    return JSON.parse(localStorage.getItem(key));
+  } catch {
+    return undefined;
+  }
 }
-
