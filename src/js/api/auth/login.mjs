@@ -1,21 +1,24 @@
 import { url } from "/src/js/api/constants.mjs";
-import { save } from "../../storage/save.mjs";
+import * as storage from "../../storage/index.mjs";
 
 export async function login(profile) {
   const loginUrl = `${url}/auth/login`;
-  const method = "post";
-  const body = JSON.stringify(profile);
   const options = {
     headers: {
       "Content-Type": "application/json",
     },
-    method,
-    body,
+    method: "post",
+    body: JSON.stringify(profile),
   };
 
   const response = await fetch(loginUrl, options);
-  const result = await response.json();
 
-  // save token to lokal storage
-  save("token", result.accessToken);
+  if (response.ok) {
+    const { accessToken, ...user } = await response.json();
+
+    storage.save("token", accessToken);
+    storage.save("user", user);
+  } else {
+    throw new Error(response.statusText);
+  }
 }

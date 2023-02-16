@@ -10,6 +10,8 @@ export function submitLoginForm() {
       const profile = Object.fromEntries(formData.entries());
 
       login(profile);
+      alert("User loged in");
+      window.location.href = "/profile";
     });
   }
 }
