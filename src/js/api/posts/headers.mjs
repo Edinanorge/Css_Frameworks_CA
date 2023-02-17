@@ -4,7 +4,14 @@ export function headers() {
   const token = storage.load("token");
 
   return {
-    Authorization: `Bearer ${token}`,
     "Content-Type": "application/json",
+    Authorization: `Bearer ${token}`,
   };
+}
+
+export async function fetchWhitToken(url, options = {}) {
+  return fetch(url, {
+    ...options,
+    headers: headers(),
+  });
 }
