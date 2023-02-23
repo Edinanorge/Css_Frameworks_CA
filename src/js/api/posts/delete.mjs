@@ -8,7 +8,7 @@ export async function removePost(id) {
 
   const removePostUrl = `${url}/posts/${id}`;
   const options = {
-    method: "delete",
+    method: "DELETE",
   };
 
   const response = await fetchWhitToken(removePostUrl, options);

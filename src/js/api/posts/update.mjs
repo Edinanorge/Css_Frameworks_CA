@@ -3,7 +3,7 @@ import { fetchWhitToken } from "./headers.mjs";
 
 export async function updatePost(postData) {
   if (!postData.id) {
-    throw new Error("Upate requires a postId");
+    throw new Error("Update requires a postId");
   }
 
   const updatePostUrl = `${url}/posts/${postData.id}`;

@@ -1,4 +1,5 @@
 import { register } from "../api/auth/register.mjs";
+import { displayMessage } from "../helpers/displayMessage.mjs";
 
 export function submitSignupForm() {
   const form = document.querySelector("#signupForm");
@@ -10,7 +11,7 @@ export function submitSignupForm() {
       const profile = Object.fromEntries(formData.entries());
 
       register(profile);
-      alert("Registered profile");
+      displayMessage("User registered. Please log in!", "success");
     });
   }
 }
