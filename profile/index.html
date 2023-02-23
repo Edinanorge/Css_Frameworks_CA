@@ -17,7 +17,10 @@
       <nav class="navbar p-3">
         <div class="container-fluid">
           <!-- logo -->
-          <a title="Social Media home" class="navbar-brand text-white fs-6 d-flex align-items-center" href="/index.html"
+          <a
+            title="Social Media posts"
+            class="navbar-brand text-white fs-6 d-flex align-items-center mx-auto mx-sm-2"
+            href="/index.html"
             ><img src="/src/images/logo.png" alt="social media logo" class="me-1 img-fluid" />Social Media</a
           >
           <!-- nav links / position fixed on mobil - sticky on descktop-->
@@ -32,16 +35,17 @@
                 ><i class="bi bi-person-fill"></i
               ></a>
             </li>
+            <li class="nav-item mx-lg-2">
+              <a title="posts" class="nav-link text-white" href="/posts" aria-label="posts page"
+                ><i class="bi bi-house-fill"></i
+              ></a>
+            </li>
             <li class="nav-item mx-lg-3">
               <a title="My Messages" class="nav-link text-white" href="#" aria-label="Messages"
                 ><i class="bi bi-chat-left-fill"></i
               ></a>
             </li>
-            <li class="nav-item mx-lg-2">
-              <a title="Home" class="nav-link text-white" href="/home" aria-label="Home page"
-                ><i class="bi bi-house-fill"></i
-              ></a>
-            </li>
+
             <li class="nav-item mx-lg-3">
               <a title="Settings" class="nav-link text-white" href="#" aria-label="Settings"
                 ><i class="bi bi-gear-fill"></i
@@ -49,15 +53,10 @@
             </li>
           </ul>
           <!-- search -->
-          <div class="d-flex flex-row align-items-center justify-content-evenly">
+          <div class="d-flex flex-row align-items-center justify-content-between">
             <form class="d-flex align-items-center" role="search">
-              <input
-                class="form-control rounded border d-none d-md-block w-80"
-                type="search"
-                placeholder="Search"
-                aria-label="Search input"
-              />
-              <button title="Search" class="btn search" type="submit" aria-label="search">
+              <input class="form-control rounded border" type="search" placeholder="Search" aria-label="Search input" />
+              <button title="Search" class="btn btn-search" type="submit" aria-label="search">
                 <i class="bi bi-search"></i>
               </button>
             </form>
@@ -68,269 +67,285 @@
       </nav>
     </header>
 
-    <main class="container profil">
+    <main class="container">
       <div class="row">
-        <!-- flex item 1 / profil info -->
-        <div class="col col-lg-9 text-center align-self-center">
-          <div class="d-block d-md-flex justify-content-center mb-5">
-            <!-- profil img, details -->
-            <img src="/src/images/sara.jpg" alt="Profil picture" class="rounded-circle profil-picture" />
-            <div class="text-center mt-5 px-lg-5">
-              <div class="py-5">
-                <h1 class="fs-4 text-white mb-0">Jessica Jhones</h1>
-                <div class="col-12 w-100">
-                  <p class="fs-7 mb-4 text-secondary">London, United Kingdom</p>
-                  <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                    <button type="button" class="btn btn-outline-light btn-sm px-4 me-sm-3">Edit profile</button>
-                    <a href="/index.html" type="button" class="btn btn-outline-light btn-sm px-4">Log out</a>
-                  </div>
-                </div>
-              </div>
-              <!-- add posts form  -->
-              <form class="d-flex flex-row add-post">
-                <button title="Add emoji" class="btn btn-emoji" type="button">
-                  <i class="bi bi-emoji-smile"></i>
-                </button>
-                <input
-                  class="form-control bg-input-color text-white rounded border ps-5"
-                  type="text"
-                  placeholder="What is on your mind?..."
-                  title="Create new post."
+        <!-- flex item 1  -->
+        <div class="col-md-4 col-xl-3 text-center my-5 profil" id="profilContainer">
+          <!-- profil img, details -->
+          <img src="/src/images/sara.jpg" alt="Profil picture" class="rounded-circle profil-picture" />
+          <h1 class="fs-5 text-white mb-0">Jessica Jhones</h1>
+          <p class="fs-7 mb-4 text-secondary">London, United Kingdom</p>
+          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <button type="button" class="btn btn-outline-light btn-sm px-4 me-sm-3">Edit profile</button>
+            <button type="button" class="btn btn-outline-light btn-sm px-4">Log out</button>
+          </div>
+
+          <!-- user contacts/ events -->
+          <div>
+            <p class="s-5 mt-5 text-start text-muted fs-5 ms-2">Contacts</p>
+            <div class="contacts d-flex flex-sm-row flex-lg-column justify-content-center" id="contactsContainer">
+              <!-- <a hreaf="#" class="d-md-flex align-items-center text-decoration-none text-white">
+                <img
+                  style="width: 3rem; height: 3rem; object-fit: cover"
+                  src="${profileData.avatar}"
+                  alt="Profile picture"
+                  class="rounded-circle m-1 border border-secondary border-2"
                 />
-                <button title="Add image or video" class="btn btn-image" type="button">
-                  <i class="bi bi-camera"></i>
-                </button>
-                <button title="Send new post" class="btn btn-primary border-primary ms-3">
-                  <i class="bi bi-send-fill"></i>
-                </button>
-              </form>
+                <p class="m-0 ps-md-2 d-none d-lg-block">${profileData.name}</p>
+              </a> -->
+            </div>
+            <!-- events -->
+            <div class="events text-muted col-xl-2">
+              <p class="fs-5 mt-5 pb-lg-0 text-start ms-2">Events</p>
+              <ul class="list-group-flush row d-lg-block p-0 m-1">
+                <li class="list-group-item col d-md-flex align-items-start">
+                  <p class="bg-primary p-3 m-1 d-inline-block">Jan.25</p>
+                  <div>
+                    <div class="fw-bold me-1">Subheading</div>
+                    <p class="fs-7">Content for event</p>
+                  </div>
+                </li>
+                <li class="list-group-item col d-md-flex align-items-start">
+                  <p class="bg-primary p-3 m-1 d-inline-block">Feb.01</p>
+                  <div>
+                    <div class="fw-bold">Subheading</div>
+                    <p class="fs-7">Content for event</p>
+                  </div>
+                </li>
+                <li class="list-group-item col d-md-flex align-items-start">
+                  <p class="bg-primary p-3 m-1 d-inline-block">Feb.04</p>
+                  <div>
+                    <div class="fw-bold">Subheading</div>
+                    <p class="fs-7">Content for event</p>
+                  </div>
+                </li>
+                <li class="list-group-item col d-md-flex align-items-start">
+                  <p class="bg-primary p-3 m-1 d-inline-block">Feb.08</p>
+                  <div>
+                    <div class="fw-bold">Subheading</div>
+                    <p class="fs-7">Content for event</p>
+                  </div>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
+        <!-- flex item 2-->
+        <div class="col-md-8 col-xl-6 col-xxl-8 p-3 offset-md-4 offset-xl-3 offset-xxl-2">
+          <!-- create posts form  -->
+          <div class="border rounded my-4">
+            <button
+              class="btn w-100 text-start"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#createPostCollapse"
+              aria-expanded="false"
+              aria-controls="collapseExample"
+            >
+              What is on your mind?...
+            </button>
+            <div class="collapse mb-3" id="createPostCollapse">
+              <div>
+                <form id="createPostForm" class="mx-auto w-100">
+                  <div class="input-group-lg mt-5">
+                    <div class="form-floating mb-3">
+                      <input
+                        type="text"
+                        class="form-control border bg-input-color"
+                        name="title"
+                        maxlength="280"
+                        placeholder="Title"
+                        required
+                      />
+                      <label for="title">Title *</label>
+                    </div>
 
-        <!-- flex item 2 / user friends -->
-        <div class="col ms-lg-5 position-relative">
-          <p class="s-5 mt-5 text-start text-muted fs-5 ms-2">Contacts</p>
-          <div class="contacts d-flex flex-sm-row flex-lg-column justify-content-center">
-          <!-- contacts -->
-        </div>
-        <!-- latest post-->
-        <div class="col-12 p-3">
-          <p class="fs-5 mt-4 ms-2">My latest posts</p>
-          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 gallery">
-            <div class="col">
-              <div class="card bg-gray mx-auto feed mt-lg-3">
+                    <div class="form-floating mb-3">
+                      <textarea
+                        type="text"
+                        class="form-control border bg-input-color"
+                        name="body"
+                        placeholder="Body"
+                      ></textarea>
+                      <label for="body">Body</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                      <input type="text" class="form-control border bg-input-color" name="tags" placeholder="tags" />
+                      <label for="tags">Tags</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                      <input type="url" class="form-control border bg-input-color" name="media" placeholder="media" />
+                      <label for="media">Media</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg w-100 my-3">Send</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <p class="fs-5 mt-4 ms-2 text-muted">My posts</p>
+          <div class="col" id="profilePostsContainer">
+            <!-- <div class="card bg-white text-dark p-0 feed">
+              <a href="/posts/post/">
+                <img class="card-img mb-1" src="/src/images/feed3.jpg" alt="feed image" />
+              </a>
+              <div class="card-body">
+                <p class="card-title text-primary fw-bolder">Lorem ipsum dolor sit.</p>
+                <p class="mb-3 fw-lighter">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis dolorem saepe atque, beata.
+                  <span>👍 🙏</span>
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div>
+                    <button title="Like" class="btn text-warning p-1" type="button">
+                      <i class="bi bi-emoji-smile"></i>
+                    </button>
+                    <button title="No comment" class="btn text-warning p-1">
+                      <i class="bi bi-emoji-neutral"></i>
+                    </button>
+                    <button title="Love" class="btn text-warning p-1">
+                      <i class="bi bi-emoji-heart-eyes"></i>
+                    </button>
+                    <button title="Funny" class="btn text-warning p-1">
+                      <i class="bi bi-emoji-laughing"></i>
+                    </button>
+                  </div>
+                  <a href="/posts/post/" class="btn text-dark border">Leave a comment</a>
+                </div>
+              </div>
+            </div> -->
+            <!-- <div class=" mb-3">
+              <div class="card bg-white text-dark feed mt-lg-3">
+                <img class="card-img mb-1 rounded" src="${postData.media}" alt="feed image" />
                 <div class="card-body">
-                  <img class="card-img mb-1 rounded" src="/src/images/feed1.jpg" alt="feed image" />
-                  <p class="mb-3 text-muted">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis dolorem saepe atque, beata.
-                    <span>👍 🙏</span>
-                  </p>
-                  <button title="Like" class="card-link text-white btn">
-                    <i class="bi bi-heart-fill"></i><span class="ms-1 fs-7 text-muted">244k</span>
-                  </button>
-                  <button title="Send message" class="card-link text-white btn">
-                    <i class="bi bi-chat-fill"></i>
-                    <span class="ms-1 fs-7 text-muted">78</span>
-                  </button>
-                  <button title="Share" class="card-link text-white btn">
-                    <i class="bi bi-share-fill"></i>
-                    <span class="ms-1 fs-7 text-muted">3</span>
-                  </button>
+                  <p class="card-title text-primary fw-bolder text-decoration-none">${postData.title}</p>
+                  <p class="mb-3">${postData.body}</p>
+                  <button class="card-link text-success btn border-success">Edit</button>
+                  <button class="card-link text-danger btn border-danger">Delete</button>
                 </div>
               </div>
             </div>
+          </div> -->
 
-            <div class="col">
-              <div class="card bg-gray mx-auto feed mt-lg-3">
+            <!-- <div class="mb-3">
+              <div class="card bg-white text-dark feed mt-lg-3">
+                <img class="card-img mb-1 rounded" src="${postData.media}" alt="feed image" />
                 <div class="card-body">
-                  <img class="card-img mb-1 rounded" src="/src/images/feed3.jpg" alt="feed image" />
-                  <p class="mb-3 text-muted">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis dolorem saepe atque, beata.
-                    <span>👍 🙏</span>
-                  </p>
-                  <button title="Like" class="card-link text-white btn">
-                    <i class="bi bi-heart-fill"></i><span class="ms-1 fs-7 text-muted">244k</span>
+                  <p class="card-title text-primary fw-bolder text-decoration-none">${postData.title}</p>
+                  <p class="mb-3">${postData.body}</p>
+                  <button
+                    class="card-link text-success btn border-success"
+                    data-bs-toggle="modal"
+                    data-bs-target="#editPostModal"
+                  >
+                    Edit
                   </button>
-                  <button title="Send message" class="card-link text-white btn">
-                    <i class="bi bi-chat-fill"></i>
-                    <span class="ms-1 fs-7 text-muted">78</span>
+
+                  <div
+                    class="modal fade"
+                    id="editPostModal"
+                    tabindex="-1"
+                    aria-labelledby="editPostModalLabel"
+                    aria-hidden="true"
+                  >
+                    <div class="modal-dialog">
+                      <div class="modal-content bg-dark text-white">
+                        <div class="modal-body">
+                          <p class="modal-title fs-5 text-center" id="editPostModalLabel">Edit Post</p>
+                          <form class="mx-auto w-100" id="editPostForm">
+                            <input type="hidden" name="id" placeholder="id" value="${postData.id}" required />
+                            <div class="input-group-lg mt-5">
+                              <div class="form-floating mb-3">
+                                <input
+                                  type="text"
+                                  class="form-control border bg-input-color"
+                                  name="title"
+                                  maxlength="280"
+                                  placeholder="Title"
+                                />
+                                <label for="title">Title </label>
+                              </div>
+
+                              <div class="form-floating mb-3">
+                                <textarea
+                                  type="text"
+                                  class="form-control border bg-input-color"
+                                  name="body"
+                                  placeholder="Body"
+                                ></textarea>
+                                <label for="body">Body</label>
+                              </div>
+
+                              <div class="form-floating mb-3">
+                                <input
+                                  type="text"
+                                  class="form-control border bg-input-color"
+                                  name="tags"
+                                  placeholder="tags"
+                                />
+                                <label for="tags">Tags</label>
+                              </div>
+
+                              <div class="form-floating mb-3">
+                                <input
+                                  type="url"
+                                  class="form-control border bg-input-color"
+                                  name="media"
+                                  placeholder="media"
+                                />
+                                <label for="media">Media</label>
+                              </div>
+
+                              <button type="submit" class="btn btn-primary btn-lg w-100 my-3">Edit</button>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <button
+                    class="card-link text-danger btn border-danger"
+                    data-bs-toggle="modal"
+                    data-bs-target="#deletePostModal"
+                  >
+                    Delete
                   </button>
-                  <button title="Share" class="card-link text-white btn">
-                    <i class="bi bi-share-fill"></i>
-                    <span class="ms-1 fs-7 text-muted">3</span>
-                  </button>
+
+                  <div
+                    class="modal fade"
+                    id="deletePostModal"
+                    tabindex="-1"
+                    aria-labelledby="deletePostModalLabel"
+                    aria-hidden="true"
+                  >
+                    <div class="modal-dialog">
+                      <div class="modal-content bg-dark text-white">
+                        <div class="modal-body">
+                          <p class="modal-title fs-4 text-center" id="editPostModalLabel">
+                            Are you sure you want to delete this post?
+                          </p>
+                          <form class="mx-auto w-100" id="deletePostForm">
+                            <input type="hidden" name="id" placeholder="id" value="${postData.id}" required />
+                            <button type="submit" class="btn btn-primary btn-lg w-100 my-3">Delete</button>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-
-            <div class="col">
-              <div class="card bg-gray mx-auto feed mt-lg-3">
-                <div class="card-body">
-                  <img class="card-img mb-1 rounded" src="/src/images/feed2.jpg" alt="feed image" />
-                  <p class="mb-3 text-muted">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis dolorem saepe atque, beata.
-                    <span>👍 🙏</span>
-                  </p>
-                  <button title="Like" class="card-link text-white btn">
-                    <i class="bi bi-heart-fill"></i><span class="ms-1 fs-7 text-muted">244k</span>
-                  </button>
-                  <button title="Send message" class="card-link text-white btn">
-                    <i class="bi bi-chat-fill"></i>
-                    <span class="ms-1 fs-7 text-muted">78</span>
-                  </button>
-                  <button title="Share" class="card-link text-white btn">
-                    <i class="bi bi-share-fill"></i>
-                    <span class="ms-1 fs-7 text-muted">3</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="card bg-gray mx-auto feed mt-lg-3">
-                <div class="card-body">
-                  <img class="card-img mb-1 rounded" src="/src/images/feed1.jpg" alt="feed image" />
-                  <p class="mb-3 text-muted">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis dolorem saepe atque, beata.
-                    <span>👍 🙏</span>
-                  </p>
-                  <button title="Like" class="card-link text-white btn">
-                    <i class="bi bi-heart-fill"></i><span class="ms-1 fs-7 text-muted">244k</span>
-                  </button>
-                  <button title="Send message" class="card-link text-white btn">
-                    <i class="bi bi-chat-fill"></i>
-                    <span class="ms-1 fs-7 text-muted">78</span>
-                  </button>
-                  <button title="Share" class="card-link text-white btn">
-                    <i class="bi bi-share-fill"></i>
-                    <span class="ms-1 fs-7 text-muted">3</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="card bg-gray mx-auto feed mt-lg-3">
-                <div class="card-body">
-                  <img class="card-img mb-1 rounded" src="/src/images/feed3.jpg" alt="feed image" />
-                  <p class="mb-3 text-muted">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis dolorem saepe atque, beata.
-                    <span>👍 🙏</span>
-                  </p>
-                  <button title="Like" class="card-link text-white btn">
-                    <i class="bi bi-heart-fill"></i><span class="ms-1 fs-7 text-muted">244k</span>
-                  </button>
-                  <button title="Send message" class="card-link text-white btn">
-                    <i class="bi bi-chat-fill"></i>
-                    <span class="ms-1 fs-7 text-muted">78</span>
-                  </button>
-                  <button title="Share" class="card-link text-white btn">
-                    <i class="bi bi-share-fill"></i>
-                    <span class="ms-1 fs-7 text-muted">3</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="card bg-gray mx-auto feed mt-lg-3">
-                <div class="card-body">
-                  <img class="card-img mb-1 rounded" src="/src/images/feed2.jpg" alt="feed image" />
-                  <p class="mb-3 text-muted">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis dolorem saepe atque, beata.
-                    <span>👍 🙏</span>
-                  </p>
-                  <button title="Like" class="card-link text-white btn">
-                    <i class="bi bi-heart-fill"></i><span class="ms-1 fs-7 text-muted">244k</span>
-                  </button>
-                  <button title="Send message" class="card-link text-white btn">
-                    <i class="bi bi-chat-fill"></i>
-                    <span class="ms-1 fs-7 text-muted">78</span>
-                  </button>
-                  <button title="Share" class="card-link text-white btn">
-                    <i class="bi bi-share-fill"></i>
-                    <span class="ms-1 fs-7 text-muted">3</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="card bg-gray mx-auto feed mt-lg-3">
-                <div class="card-body">
-                  <img class="card-img mb-3 rounded" src="/src/images/feed2.jpg" alt="feed image" />
-                  <p class="mb-1 mt-3 text-muted">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis dolorem saepe atque, beata.
-                    <span>👍 🙏</span>
-                  </p>
-                  <button title="Like" class="card-link text-white btn">
-                    <i class="bi bi-heart-fill"></i><span class="ms-1 fs-7 text-muted">244k</span>
-                  </button>
-                  <button title="Send message" class="card-link text-white btn">
-                    <i class="bi bi-chat-fill"></i>
-                    <span class="ms-1 fs-7 text-muted">78</span>
-                  </button>
-                  <button title="Share" class="card-link text-white btn">
-                    <i class="bi bi-share-fill"></i>
-                    <span class="ms-1 fs-7 text-muted">3</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="card bg-gray mx-auto feed mt-lg-3">
-                <div class="card-body">
-                  <img class="card-img mb-3 rounded" src="/src/images/feed3.jpg" alt="feed image" />
-                  <p class="mb-1 mt-3 text-muted">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis dolorem saepe atque, beata.
-                    <span>👍 🙏</span>
-                  </p>
-                  <button title="Like" class="card-link text-white btn">
-                    <i class="bi bi-heart-fill"></i><span class="ms-1 fs-7 text-muted">244k</span>
-                  </button>
-                  <button title="Send message" class="card-link text-white btn">
-                    <i class="bi bi-chat-fill"></i>
-                    <span class="ms-1 fs-7 text-muted">78</span>
-                  </button>
-                  <button title="Share" class="card-link text-white btn">
-                    <i class="bi bi-share-fill"></i>
-                    <span class="ms-1 fs-7 text-muted">3</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="card bg-gray mx-auto feed mt-lg-3">
-                <div class="card-body">
-                  <img class="card-img mb-3 rounded" src="/src/images/feed1.jpg" alt="feed image" />
-                  <p class="mb-1 mt-3 text-muted">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis dolorem saepe atque, beata.
-                    <span>👍 🙏</span>
-                  </p>
-                  <button title="Like" class="card-link text-white btn">
-                    <i class="bi bi-heart-fill"></i><span class="ms-1 fs-7 text-muted">244k</span>
-                  </button>
-                  <button title="Send message" href="#" class="card-link text-white btn">
-                    <i class="bi bi-chat-fill"></i>
-                    <span class="ms-1 fs-7 text-muted">78</span>
-                  </button>
-                  <button title="Share" href="#" class="card-link text-white btn">
-                    <i class="bi bi-share-fill"></i>
-                    <span class="ms-1 fs-7 text-muted">3</span>
-                  </button>
-                </div>
-              </div>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
     </main>
 
-    <footer class="footer mt-auto py-3 text-center card-bg">
-      <div class="container">
+    <footer class="footer mt-auto py-3">
+      <div class="text-center">
         <span class="text-muted">Social Media&copy; copyright</span>
       </div>
     </footer>

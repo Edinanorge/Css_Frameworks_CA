@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="You can connect easily with your friends and family." />
-    <title>Social Media App | Home page</title>
+    <title>Social Media App | Posts page</title>
     <link rel="stylesheet" href="/dist/css/styles.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" />
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
@@ -17,7 +17,7 @@
       <nav class="navbar p-3">
         <div class="container-fluid">
           <!-- logo -->
-          <a title="Social Media home" class="navbar-brand text-white d-flex fs-6 align-items-center" href="/home.html"
+          <a title="Social Media posts" class="navbar-brand text-white fs-6 d-flex align-items-center mx-auto mx-sm-2" href="/index.html"
             ><img src="/src/images/logo.png" alt="social media logo" class="me-1 img-fluid" />Social Media</a
           >
           <!-- nav links / position fixed on mobil - sticky on descktop-->
@@ -25,79 +25,122 @@
             <li class="nav-item mx-lg-3">
               <a title="My profile" class="nav-link text-white" href="/profile"><i class="bi bi-person-fill"></i></a>
             </li>
-            <li class="nav-item mx-lg-3">
-              <a title="My Messages" class="nav-link text-white" href="#"><i class="bi bi-chat-left-fill"></i></a>
-            </li>
             <li class="nav-item current mx-lg-2">
-              <a title="Home" class="nav-link text-white" aria-current="page" href="/home"
+              <a title="Posts" class="nav-link text-white" aria-current="page" href="/posts/"
                 ><i class="bi bi-house-fill"></i
               ></a>
             </li>
+            <li class="nav-item mx-lg-3">
+              <a title="My Messages" class="nav-link text-white" href="#"><i class="bi bi-chat-left-fill"></i></a>
+            </li>
+
             <li class="nav-item mx-lg-3">
               <a title="Settings" class="nav-link text-white" href="#"><i class="bi bi-gear-fill"></i></a>
             </li>
           </ul>
           <!-- search -->
-          <div class="d-flex flex-row align-items-center justify-content-evenly">
+          <div class="d-flex flex-row align-items-center justify-content-between ">
             <form class="d-flex align-items-center" role="search">
               <input
-                class="form-control bg-input-color rounded border d-none d-md-block w-80"
+                class="form-control rounded border"
                 type="search"
                 placeholder="Search"
                 aria-label="Search input"
               />
-              <button title="Search" class="btn search" type="submit">
+              <button title="Search" class="btn btn-search" type="submit" aria-label="search">
                 <i class="bi bi-search"></i>
               </button>
             </form>
             <!-- Profil img -->
-            <img src="/src/images/sara.jpg" alt="Profil picture" class="rounded-circle profil-img ms-1" />
+            <img src="/src/images/sara.jpg" alt="profil picture" class="rounded-circle profil-img ms-1" />
           </div>
-        </div>
       </nav>
     </header>
     <main class="container">
       <div class="row g-md-5">
         <!-- flex 1 item -->
-        <div class="profil-info col-md-4 col-lg-3">
+        <div class="profil-info col-md-4 ">
           <!-- profil extra info -->
-          <div class="profil-extra-info d-none d-md-block mt-md-3 mt-lg-5 text-center">
-            <h1 class="fs-5 text-center">Nice to se you again <span class="text-secondary">Jessica!</span></h1>
+          <div class="profil-extra-info mt-3 mt-md-5 text-center">
+            <h1 class="fs-5 text-center">Nice to se you again</h1>
+            <p class="text-secondary">Jessica!</p>
             <img src="/src/images/sara.jpg" alt="profil picture" class="rounded-circle mx-auto text-center" />
           </div>
           <!-- contacts  -->
-          <div class="contacts d-flex flex-sm-row flex-md-column justify-content-center">
+          <div class="contacts d-flex flex-xs-row flex-sm-column justify-content-center">
             <p class="d-none d-md-block s-5 mt-5 text-start text-muted fs-5">Contacts</p>
+          
+          
           </div>
         </div>
 
         <!-- flex 2 item -->
         <div class="feeds col-md-8 col-lg-7">
-          <!-- create post -->
-          <form class="d-flex flex-row add-post my-3">
-            <button title="Add emoji" class="btn btn-emoji" type="button">
-              <i class="bi bi-emoji-smile"></i>
+          <!-- create posts form -->
+          <div class="border rounded my-5">
+            <button class="btn w-100 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#createPostCollapse" aria-expanded="false" aria-controls="collapseExample">
+              What is on your mind?...
             </button>
-            <input
-              class="form-control bg-input-color text-white rounded border ps-5"
-              type="text"
-              placeholder="What is on your mind?..."
-              title="Create new post."
-            />
-            <button title="Add image or video" class="btn btn-image" type="button">
-              <i class="bi bi-camera"></i>
-            </button>
-            <button title="Send new post" class="btn btn-primary border-primary ms-3">
-              <i class="bi bi-send-fill"></i>
-            </button>
-          </form>
+            <div class="collapse mb-3" id="createPostCollapse">
+              <div >
+                <form  class="mx-auto w-100" id="createPostForm">
+                  <div class="input-group-lg mt-5">
+                   
+                    <div class="form-floating mb-3">
+                      <input
+                        type="text"
+                        class="form-control border bg-input-color"
+                        name="title"
+                       maxlength="280"
+                       placeholder="Title"
+                       required
+                      />
+                      <label for="title">Title *</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                      <textarea
+                        type="text"
+                        class="form-control border bg-input-color"
+                        name="body"
+                        placeholder="Body"
+                        
+                      ></textarea>
+                      <label for="body">Body</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                      <input
+                        type="text"
+                        class="form-control border bg-input-color"
+                        name="tags"
+                        placeholder="tags"
+                       />
+                      <label for="tags">Tags</label>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                      <input
+                        type="url"
+                        class="form-control border bg-input-color"
+                        name="media"
+                        placeholder="media"
+                      />
+                      <label for="media">Media</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg w-100 my-3">Send</button> 
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
 
           <!-- feeds -->
           <div class="row" id="posts"></div>
         </div>
 
         <!-- flex 3 item -->
-        <div class="events col col-lg-2 text-muted">
+        <!-- <div class="events col col-lg-2 text-muted">
           <p class="fs-5 mt-5 pb-lg-0">Events</p>
           <ol class="list-group-flush row d-md-block p-0 m-1">
             <li class="list-group-item col d-md-flex align-items-start">
@@ -136,7 +179,7 @@
               </div>
             </li>
           </ol>
-        </div>
+        </div> -->
       </div>
     </main>
 
