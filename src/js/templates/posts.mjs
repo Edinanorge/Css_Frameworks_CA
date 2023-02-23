@@ -1,49 +1,72 @@
+import { createButton, createElement, createLinkWithImage, createLink, createParagraf } from "./helperFunctions.mjs";
+
 export function postTemplate(postData) {
-  const markup = `<div class="row" id="posts">
-    <div id="postTemplate">
-      <div class="col-12">
-        <div class="card bg-gray mx-auto feed mt-lg-3">
-          <div class="card-body">
-            <div class="d-flex align-items-center justify-content-between">
-              <div>
-                <img
-                  src="/src/images/user-3.jpg"
-                  alt="Profile picture"
-                  class="rounded-circle border border-secondary border-2 feed-img"
-                />
-                <span class="card-title text-white mx-2 fs-5">${postData.title}</span>
-              </div>
-              <button title="Settings" class="btn card-text" type="button" aria-label="settings">
-                <i class="bi bi-three-dots"></i>
-              </button>
-            </div>
-            <img class="card-img my-3" alt="feed image" src=""/>
-            <p class="mb-1 mt-3 text-muted card-content">${postData.body}</p>
-            <div class="d-flex justify-content-between mt-3">
-              <button title="Like" href="#" class="card-link text-white btn" aria-label="like post">
-                <i class="bi bi-heart-fill"></i><span class="ms-1 fs-7 text-muted">244k</span>
-              </button>
-              <button title="Send message" href="#" class="card-link text-white btn" aria-label="send message">
-                <i class="bi bi-chat-fill"></i>
-                <span class="ms-1 fs-7 text-muted">78</span>
-              </button>
-              <button title="Share" href="#" class="card-link text-white btn" aria-label="share">
-                <i class="bi bi-share-fill"></i>
-                <span class="ms-1 fs-7 text-muted">3</span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>`;
-  return markup;
+  const container = createElement("div", ["card", "bg-white", "text-dark", "p-0", "feed", "mb-3"]);
+  if (postData.media) {
+    const linkWhitImage = createLinkWithImage(
+      `/posts/post/${postData.id}`,
+      "View post",
+      postData.media,
+      `Image from ${postData.title}`,
+      [],
+      ["card-img", "mb-1"]
+    );
+    container.appendChild(linkWhitImage);
+  }
+
+  const card = createElement("div", ["card-body"]);
+  container.appendChild(card);
+
+  const title = createParagraf(postData.title, ["card-title", "text-primary", "fw-bolder"]);
+  card.appendChild(title);
+
+  const body = createParagraf(postData.body, ["mb-3", "fw-lighter"]);
+  card.appendChild(body);
+
+  const linkContainer = createElement("div", ["d-flex", "justify-content-between", "align-items-center"]);
+  card.appendChild(linkContainer);
+
+  const buttonContainer = document.createElement("div");
+  linkContainer.appendChild(buttonContainer);
+
+  const buttonHappy = createButton(["btn", "text-warning", "p-2"], "Like");
+  buttonContainer.appendChild(buttonHappy);
+
+  const iconHappy = createElement("i", ["bi", "bi-emoji-smile-fill"]);
+  buttonHappy.appendChild(iconHappy);
+
+  const buttonNeutral = createButton(["btn", "text-warning", "p-2"], "No comment");
+  buttonContainer.appendChild(buttonNeutral);
+
+  const iconNeutral = createElement("i", ["bi", "bi-emoji-neutral-fill"]);
+  buttonNeutral.appendChild(iconNeutral);
+
+  const buttonLove = createButton(["btn", "text-warning", "p-2"], "Love");
+  buttonContainer.appendChild(buttonLove);
+
+  const iconLove = createElement("i", ["bi", "bi-emoji-heart-eyes-fill"]);
+  buttonLove.appendChild(iconLove);
+
+  const buttonFunny = createButton(["btn", "text-warning", "p-2"], "Funny");
+  buttonContainer.appendChild(buttonFunny);
+
+  const iconFunny = createElement("i", ["bi", "bi-emoji-laughing-fill"]);
+  buttonFunny.appendChild(iconFunny);
+
+  const linkComment = createLink(`posts/post/${postData.id}`, "Commet", "Leave a commet", [
+    "btn",
+    "text-dark",
+    "border",
+  ]);
+  linkContainer.appendChild(linkComment);
+
+  return container;
 }
 
 export function renderPostTemplate(postData, parent) {
-  parent.insertAdjacentHTML("afterbegin", postTemplate(postData));
+  parent.append(postTemplate(postData));
 }
 
 export function renderPostTemplates(postDataList, parent) {
-  parent.insertAdjacentHTML("afterbegin", postDataList.map(postTemplate));
+  parent.append(...postDataList.map(postTemplate));
 }
