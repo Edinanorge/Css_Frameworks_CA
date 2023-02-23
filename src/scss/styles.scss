@@ -1,7 +1,14 @@
 @import "variables.scss";
 
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
+.success {
+  color: $success;
+  font-weight: 600;
+}
 
+.danger {
+  color: $danger;
+}
 // general
 .bg-input-color {
   background-color: $bg-input-color;
@@ -14,14 +21,17 @@
 }
 
 //..... login page.....//
-.login-main {
-  .btn-login {
-    transition: all 0.3s ease;
-    &:hover {
-      background-color: $primary;
-    }
+.user-profile-picture {
+  @include image-size(2.5rem, 2.5rem, cover);
+}
+
+.btn-login {
+  transition: all 0.3s ease;
+  &:hover {
+    background-color: $primary;
   }
 }
+
 form {
   max-width: 28rem;
   a {
@@ -55,6 +65,7 @@ form {
   .navbar-brand img {
     width: 2rem;
   }
+
   .form-control {
     border-radius: 1.5rem;
   }
@@ -62,9 +73,15 @@ form {
   .profil-img {
     @include image-size(2rem, 2rem, cover);
   }
-  .nav-item:hover,
-  .search:hover {
-    background-color: $gray-800;
+
+  .btn-search {
+    border-radius: 0;
+    & i:hover {
+      color: $secondary;
+    }
+  }
+  .nav-link:hover {
+    box-shadow: 0 -2px 0 $gray-700 inset;
   }
 }
 
@@ -72,65 +89,33 @@ form {
 .profil-extra-info img {
   @include image-size(5rem, 5rem, cover);
 }
-// create post
-.add-post {
-  position: relative;
 
-  input {
-    padding: 0.7rem;
-  }
-
-  .btn-emoji {
-    left: 0.5rem;
-  }
-
-  .btn-image {
-    right: 4rem;
-  }
-
-  .btn-emoji,
-  .btn-image {
-    position: absolute;
-    top: 10%;
-    z-index: 9;
-    transition: all 0.4s ease;
-
-    &:hover {
-      background-color: $primary;
-    }
-  }
-}
 // contacts
+
 .contacts img,
 .feed-img {
   @include image-size(3rem, 3rem, cover);
 }
 
 // feeds
-
-.feed {
-  .card-link {
-    transition: all 0.4s ease;
-    &:hover {
-      background-color: $gray-700;
-    }
-    i {
-      font-size: 1.3rem;
-      color: $secondary;
-    }
-  }
+.card {
+  border: none;
+  box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 20%), 0 1px 5px 0 rgb(0 0 0 / 12%);
 }
 
 .card-img {
-  @include image-size(10rem, 100%, cover);
+  @include image-size(15rem, 100%, cover);
 }
 
-// events
-
+.card-img,
+.card-img-bottom {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
 //.... profil page .....//
 .profil {
   .profil-picture {
-    @include image-size(10rem, 10rem, cover);
+    @include image-size(5rem, 5rem, cover);
   }
   .gallery img {
     @include image-size(12rem, 100%, cover);
@@ -141,14 +126,17 @@ form {
   .main-navigation {
     backdrop-filter: blur(5px);
   }
-
-  .events {
-    position: absolute;
-    top: 110%;
+  .profil {
+    position: fixed;
+    top: 15%;
+    left: 0;
+    overflow-y: scroll;
   }
 }
 @media only screen and (min-width: 1200px) {
   .events {
-    position: static;
+    position: fixed;
+    right: 2%;
+    top: 12%;
   }
-}
+} ;
