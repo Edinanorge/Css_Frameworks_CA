@@ -1,4 +1,5 @@
 import { url } from "/src/js/api/constants.mjs";
+import { displayMessage } from "../../helpers/displayMessage.mjs";
 
 export async function register(profile) {
   const registerUrl = `${url}/auth/register`;
@@ -6,7 +7,7 @@ export async function register(profile) {
     headers: {
       "Content-Type": "application/json",
     },
-    method: "post",
+    method: "POST",
     body: JSON.stringify(profile),
   };
 
@@ -15,7 +16,7 @@ export async function register(profile) {
   if (response.ok) {
     return await response.json();
   } else {
-    alert("User already registerd");
+    displayMessage("User already registered!", "danger");
     throw new Error(response.status);
   }
 }
