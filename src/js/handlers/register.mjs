@@ -11,7 +11,6 @@ export function submitSignupForm() {
       const profile = Object.fromEntries(formData.entries());
 
       register(profile);
-      displayMessage("User registered. Please log in!", "success");
     });
   }
 }

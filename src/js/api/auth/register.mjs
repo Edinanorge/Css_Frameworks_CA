@@ -14,9 +14,11 @@ export async function register(profile) {
   const response = await fetch(registerUrl, options);
 
   if (response.ok) {
+    displayMessage("registerFeedback", "User registered. Please log in!", "success");
+    form.reset();
     return await response.json();
   } else {
-    displayMessage("User already registered!", "danger");
+    displayMessage("registerFeedback", "User already registered!", "danger");
     throw new Error(response.status);
   }
 }

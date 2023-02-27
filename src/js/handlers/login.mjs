@@ -11,7 +11,6 @@ export function submitLoginForm() {
       const profile = Object.fromEntries(formData.entries());
 
       login(profile);
-      window.location.href = "/profile";
     });
   }
 }
