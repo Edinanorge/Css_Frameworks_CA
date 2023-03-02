@@ -19,7 +19,7 @@
           <!-- logo -->
           <a
             title="Social Media posts"
-            class="navbar-brand text-white fs-6 d-flex align-items-center mx-auto mx-sm-2"
+            class="navbar-brand text-white fs-6 d-flex align-items-center"
             href="/index.html"
             ><img src="/src/images/logo.png" alt="social media logo" class="me-1 img-fluid" />Social Media</a
           >
@@ -52,16 +52,11 @@
               ></a>
             </li>
           </ul>
-          <!-- search -->
+
           <div class="d-flex flex-row align-items-center justify-content-between">
-            <form class="d-flex align-items-center" role="search">
-              <input class="form-control rounded border" type="search" placeholder="Search" aria-label="Search input" />
-              <button title="Search" class="btn btn-search" type="submit" aria-label="search">
-                <i class="bi bi-search"></i>
-              </button>
-            </form>
+            <button class="btn btn-outline-light btn-md me-2" id="btnLogout">Log out</button>
             <!-- Profil img -->
-            <img src="/src/images/sara.jpg" alt="profil picture" class="rounded-circle profil-img ms-1" />
+            <img src="/src/images/sara.jpg" alt="profil picture" class="rounded-circle profil-img ms-1 avatar" />
           </div>
         </div>
       </nav>
@@ -70,70 +65,36 @@
     <main class="container">
       <div class="row">
         <!-- flex item 1  -->
-        <div class="col-md-4 col-xl-3 text-center my-5 profil" id="profilContainer">
+        <div class="col-md-3 text-center my-5 profile" id="profilContainer">
           <!-- profil img, details -->
-          <img src="/src/images/sara.jpg" alt="Profil picture" class="rounded-circle profil-picture" />
-          <h1 class="fs-5 text-white mb-0">Jessica Jhones</h1>
-          <p class="fs-7 mb-4 text-secondary">London, United Kingdom</p>
-          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-            <button type="button" class="btn btn-outline-light btn-sm px-4 me-sm-3">Edit profile</button>
-            <button type="button" class="btn btn-outline-light btn-sm px-4">Log out</button>
+          <div id="avatarContainer">
+            <img src="/src/images/sara.jpg" alt="Profil picture" class="rounded-circle profil-picture avatar" />
           </div>
 
-          <!-- user contacts/ events -->
-          <div>
-            <p class="s-5 mt-5 text-start text-muted fs-5 ms-2">Contacts</p>
-            <div class="contacts d-flex flex-sm-row flex-lg-column justify-content-center" id="contactsContainer">
-              <!-- <a hreaf="#" class="d-md-flex align-items-center text-decoration-none text-white">
-                <img
-                  style="width: 3rem; height: 3rem; object-fit: cover"
-                  src="${profileData.avatar}"
-                  alt="Profile picture"
-                  class="rounded-circle m-1 border border-secondary border-2"
-                />
-                <p class="m-0 ps-md-2 d-none d-lg-block">${profileData.name}</p>
-              </a> -->
+          <h1 class="fs-5 text-white mb-0 name">Jessica Jhones</h1>
+          <p class="fs-7 mb-4 text-secondary email">London, United Kingdom</p>
+
+          <form class="mx-auto w-100" id="editProfile">
+            <p class="text-start mt-5 mb-0">Update avatar :</p>
+            <div class="form-floating">
+              <input
+                type="url"
+                class="form-control border bg-input-color mb-3 text-muted"
+                name="avatar"
+                placeholder="Avatar"
+                required
+              />
+              <label for="verify-password">Avatar (url)</label>
             </div>
-            <!-- events -->
-            <div class="events text-muted col-xl-2">
-              <p class="fs-5 mt-5 pb-lg-0 text-start ms-2">Events</p>
-              <ul class="list-group-flush row d-lg-block p-0 m-1">
-                <li class="list-group-item col d-md-flex align-items-start">
-                  <p class="bg-primary p-3 m-1 d-inline-block">Jan.25</p>
-                  <div>
-                    <div class="fw-bold me-1">Subheading</div>
-                    <p class="fs-7">Content for event</p>
-                  </div>
-                </li>
-                <li class="list-group-item col d-md-flex align-items-start">
-                  <p class="bg-primary p-3 m-1 d-inline-block">Feb.01</p>
-                  <div>
-                    <div class="fw-bold">Subheading</div>
-                    <p class="fs-7">Content for event</p>
-                  </div>
-                </li>
-                <li class="list-group-item col d-md-flex align-items-start">
-                  <p class="bg-primary p-3 m-1 d-inline-block">Feb.04</p>
-                  <div>
-                    <div class="fw-bold">Subheading</div>
-                    <p class="fs-7">Content for event</p>
-                  </div>
-                </li>
-                <li class="list-group-item col d-md-flex align-items-start">
-                  <p class="bg-primary p-3 m-1 d-inline-block">Feb.08</p>
-                  <div>
-                    <div class="fw-bold">Subheading</div>
-                    <p class="fs-7">Content for event</p>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
+            <div id="updateMessage" class="fs-7 mb-1"></div>
+            <button type="submit" class="btn btn-outline-light btn-md">Edit avatar</button>
+          </form>
         </div>
+
         <!-- flex item 2-->
-        <div class="col-md-8 col-xl-6 col-xxl-8 p-3 offset-md-4 offset-xl-3 offset-xxl-2">
+        <div class="col-md-7 col-xxl-8 offset-md-5 offset-xl-4">
           <!-- create posts form  -->
-          <div class="border rounded my-4">
+          <div class="border rounded my-5">
             <button
               class="btn w-100 text-start"
               type="button"
@@ -142,7 +103,7 @@
               aria-expanded="false"
               aria-controls="collapseExample"
             >
-              What is on your mind?...
+              <i class="bi bi-plus-circle-fill text-secondary fs-5 me-3"></i> Create a new post.
             </button>
             <div class="collapse mb-3" id="createPostCollapse">
               <div>
@@ -186,160 +147,7 @@
             </div>
           </div>
 
-          <p class="fs-5 mt-4 ms-2 text-muted">My posts</p>
-          <div class="col" id="profilePostsContainer">
-            <!-- <div class="card bg-white text-dark p-0 feed">
-              <a href="/posts/post/">
-                <img class="card-img mb-1" src="/src/images/feed3.jpg" alt="feed image" />
-              </a>
-              <div class="card-body">
-                <p class="card-title text-primary fw-bolder">Lorem ipsum dolor sit.</p>
-                <p class="mb-3 fw-lighter">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis dolorem saepe atque, beata.
-                  <span>👍 🙏</span>
-                </p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div>
-                    <button title="Like" class="btn text-warning p-1" type="button">
-                      <i class="bi bi-emoji-smile"></i>
-                    </button>
-                    <button title="No comment" class="btn text-warning p-1">
-                      <i class="bi bi-emoji-neutral"></i>
-                    </button>
-                    <button title="Love" class="btn text-warning p-1">
-                      <i class="bi bi-emoji-heart-eyes"></i>
-                    </button>
-                    <button title="Funny" class="btn text-warning p-1">
-                      <i class="bi bi-emoji-laughing"></i>
-                    </button>
-                  </div>
-                  <a href="/posts/post/" class="btn text-dark border">Leave a comment</a>
-                </div>
-              </div>
-            </div> -->
-            <!-- <div class=" mb-3">
-              <div class="card bg-white text-dark feed mt-lg-3">
-                <img class="card-img mb-1 rounded" src="${postData.media}" alt="feed image" />
-                <div class="card-body">
-                  <p class="card-title text-primary fw-bolder text-decoration-none">${postData.title}</p>
-                  <p class="mb-3">${postData.body}</p>
-                  <button class="card-link text-success btn border-success">Edit</button>
-                  <button class="card-link text-danger btn border-danger">Delete</button>
-                </div>
-              </div>
-            </div>
-          </div> -->
-
-            <!-- <div class="mb-3">
-              <div class="card bg-white text-dark feed mt-lg-3">
-                <img class="card-img mb-1 rounded" src="${postData.media}" alt="feed image" />
-                <div class="card-body">
-                  <p class="card-title text-primary fw-bolder text-decoration-none">${postData.title}</p>
-                  <p class="mb-3">${postData.body}</p>
-                  <button
-                    class="card-link text-success btn border-success"
-                    data-bs-toggle="modal"
-                    data-bs-target="#editPostModal"
-                  >
-                    Edit
-                  </button>
-
-                  <div
-                    class="modal fade"
-                    id="editPostModal"
-                    tabindex="-1"
-                    aria-labelledby="editPostModalLabel"
-                    aria-hidden="true"
-                  >
-                    <div class="modal-dialog">
-                      <div class="modal-content bg-dark text-white">
-                        <div class="modal-body">
-                          <p class="modal-title fs-5 text-center" id="editPostModalLabel">Edit Post</p>
-                          <form class="mx-auto w-100" id="editPostForm">
-                            <input type="hidden" name="id" placeholder="id" value="${postData.id}" required />
-                            <div class="input-group-lg mt-5">
-                              <div class="form-floating mb-3">
-                                <input
-                                  type="text"
-                                  class="form-control border bg-input-color"
-                                  name="title"
-                                  maxlength="280"
-                                  placeholder="Title"
-                                />
-                                <label for="title">Title </label>
-                              </div>
-
-                              <div class="form-floating mb-3">
-                                <textarea
-                                  type="text"
-                                  class="form-control border bg-input-color"
-                                  name="body"
-                                  placeholder="Body"
-                                ></textarea>
-                                <label for="body">Body</label>
-                              </div>
-
-                              <div class="form-floating mb-3">
-                                <input
-                                  type="text"
-                                  class="form-control border bg-input-color"
-                                  name="tags"
-                                  placeholder="tags"
-                                />
-                                <label for="tags">Tags</label>
-                              </div>
-
-                              <div class="form-floating mb-3">
-                                <input
-                                  type="url"
-                                  class="form-control border bg-input-color"
-                                  name="media"
-                                  placeholder="media"
-                                />
-                                <label for="media">Media</label>
-                              </div>
-
-                              <button type="submit" class="btn btn-primary btn-lg w-100 my-3">Edit</button>
-                            </div>
-                          </form>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <button
-                    class="card-link text-danger btn border-danger"
-                    data-bs-toggle="modal"
-                    data-bs-target="#deletePostModal"
-                  >
-                    Delete
-                  </button>
-
-                  <div
-                    class="modal fade"
-                    id="deletePostModal"
-                    tabindex="-1"
-                    aria-labelledby="deletePostModalLabel"
-                    aria-hidden="true"
-                  >
-                    <div class="modal-dialog">
-                      <div class="modal-content bg-dark text-white">
-                        <div class="modal-body">
-                          <p class="modal-title fs-4 text-center" id="editPostModalLabel">
-                            Are you sure you want to delete this post?
-                          </p>
-                          <form class="mx-auto w-100" id="deletePostForm">
-                            <input type="hidden" name="id" placeholder="id" value="${postData.id}" required />
-                            <button type="submit" class="btn btn-primary btn-lg w-100 my-3">Delete</button>
-                          </form>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div> -->
-          </div>
+          <div class="col" id="profilePostsContainer"></div>
         </div>
       </div>
     </main>

@@ -2,7 +2,7 @@ import { url } from "../constants.mjs";
 import { fetchWhitToken } from "./headers.mjs";
 
 export async function getPosts() {
-  const getPostsUrl = `${url}/posts`;
+  const getPostsUrl = `${url}/posts?_author=true&_comments=true&_reactions=true`;
 
   const response = await fetchWhitToken(getPostsUrl);
 
@@ -19,7 +19,7 @@ export async function getPost(id) {
     throw new Error("Get requires a postId");
   }
 
-  const getPostsUrl = `${url}/posts/${id}`;
+  const getPostsUrl = `${url}/posts/${id}?_author=true&_comments=true&_reactions=true`;
 
   const response = await fetchWhitToken(getPostsUrl);
 

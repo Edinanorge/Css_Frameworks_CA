@@ -8,16 +8,19 @@ export async function updatePost(postData) {
 
   const updatePostUrl = `${url}/posts/${postData.id}`;
   const options = {
-    body: JSON.stringify(postData),
+    body: JSON.stringify({
+      title: postData.title,
+      body: postData.body,
+      media: postData.media,
+      tags: postData.tags.split(","),
+    }),
     method: "put",
   };
 
   const response = await fetchWhitToken(updatePostUrl, options);
 
   if (response.ok) {
-    const post = await response.json();
-    console.log(post);
-    return post;
+    return await response.json();
   } else {
     throw new Error(response.statusText);
   }

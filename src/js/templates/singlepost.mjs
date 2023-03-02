@@ -1,13 +1,12 @@
 import {
-  createButton,
+  generateParagraphs,
   createElement,
   createLinkWithImage,
-  createLink,
   createParagraf,
   createImage,
 } from "./helperFunctions.mjs";
 
-export function postTemplate(postData) {
+export function singlePostTemplate(postData) {
   if (!postData.media) postData.media = "https://picsum.photos/200/300?grayscale";
 
   const container = createElement("div", ["card", "p-0", "feed", "mb-3"]);
@@ -52,46 +51,22 @@ export function postTemplate(postData) {
   );
   card.appendChild(linkWhitImage);
 
-  const linkContainer = createElement("div", ["d-flex", "justify-content-between", "align-items-center"]);
-  card.appendChild(linkContainer);
+  const commentsContainer = createElement("div", ["text-muted"]);
+  card.appendChild(commentsContainer);
 
-  const buttonContainer = document.createElement("div");
-  linkContainer.appendChild(buttonContainer);
+  const commnetsTitle = createParagraf("Comments:", ["fs-5", "text-white", "mt-3"]);
+  commentsContainer.appendChild(commnetsTitle);
 
-  const buttonHappy = createButton(["btn", "text-warning", "p-2"], "Like");
-  buttonContainer.appendChild(buttonHappy);
-
-  const iconHappy = createElement("i", ["bi", "bi-emoji-smile-fill"]);
-  buttonHappy.appendChild(iconHappy);
-
-  const buttonNeutral = createButton(["btn", "text-warning", "p-2"], "No comment");
-  buttonContainer.appendChild(buttonNeutral);
-
-  const iconNeutral = createElement("i", ["bi", "bi-emoji-neutral-fill"]);
-  buttonNeutral.appendChild(iconNeutral);
-
-  const buttonLove = createButton(["btn", "text-warning", "p-2"], "Love");
-  buttonContainer.appendChild(buttonLove);
-
-  const iconLove = createElement("i", ["bi", "bi-emoji-heart-eyes-fill"]);
-  buttonLove.appendChild(iconLove);
-
-  const buttonFunny = createButton(["btn", "text-warning", "p-2"], "Funny");
-  buttonContainer.appendChild(buttonFunny);
-
-  const iconFunny = createElement("i", ["bi", "bi-emoji-laughing-fill"]);
-  buttonFunny.appendChild(iconFunny);
-
-  const linkComment = createLink(`/post/index.html?id=${postData.id}`, "Commet", "Leave a commet", ["btn", "border"]);
-  linkContainer.appendChild(linkComment);
+  const commentsArray = generateParagraphs(postData.comments);
+  commentsArray.forEach((comment) => commentsContainer.appendChild(comment));
 
   return container;
 }
 
-export function renderPostTemplate(postData, parent) {
-  parent.append(postTemplate(postData));
+export function renderSingelPostTemplate(postData, parent) {
+  parent.append(singlePostTemplate(postData));
 }
 
-export function renderPostTemplates(postDataList, parent) {
-  parent.append(...postDataList.map(postTemplate));
+export function renderSingelPostTemplates(postDataList, parent) {
+  parent.append(...postDataList.map(singlePostTemplate));
 }
