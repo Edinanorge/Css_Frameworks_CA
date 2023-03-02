@@ -52,14 +52,9 @@
               ></a>
             </li>
           </ul>
-          <!-- search -->
+
           <div class="d-flex flex-row align-items-center justify-content-between">
-            <form class="d-flex align-items-center" role="search">
-              <input class="form-control rounded border" type="search" placeholder="Search" aria-label="Search input" />
-              <button title="Search" class="btn btn-search" type="submit" aria-label="search">
-                <i class="bi bi-search"></i>
-              </button>
-            </form>
+            <button class="btn btn-outline-light btn-md me-2" id="btnLogout">Log out</button>
             <!-- Profil img -->
             <img src="/src/images/sara.jpg" alt="profil picture" class="rounded-circle profil-img ms-1" />
           </div>
@@ -71,25 +66,9 @@
       <div class="container">
         <div class="row">
           <p class="text-center fs-5 mt-5">Edit Post</p>
-          <div class="col p-3">
-            <div class="card bg-white text-dark feed mt-lg-3">
-              <img class="card-img mb-1" src="/src/images/feed1.jpg" alt="feed image" />
-              <div class="card-body">
-                <p class="card-title text-primary fw-bolder text-decoration-none">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing.
-                </p>
-                <p class="mb-3">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi delectus molestiae totam sed dolore
-                  facere nulla libero nobis natus rerum?Nisi delectus molestiae totam sed dolore facere nulla libero
-                  nobis natus rerum?
-                </p>
-                <p class="text-end m-3 text-muted">Created: 2023. jun. 3</p>
-              </div>
-            </div>
-          </div>
-          <div class="col">
+          <div class="col-sm-12 col-lg-6 mt-5" id="editSinglePostContainer"></div>
+          <div class="col-sm-12 col-lg-6">
             <form class="mx-auto w-100" id="editPostForm">
-              <input type="hidden" name="id" placeholder="id" value="${postData.id}" required />
               <div class="input-group-lg mt-5">
                 <div class="form-floating mb-3">
                   <input

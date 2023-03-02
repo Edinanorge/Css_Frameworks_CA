@@ -27,7 +27,9 @@ export async function login(profile) {
       displayMessage("loginFeedback", "User loged in.", "success");
 
       // change the location
-      location.assign("/profile");
+      setTimeout(() => {
+        location.assign("/posts");
+      }, 300);
     } else {
       displayMessage("loginFeedback", "Wrong email or password.", "danger");
     }

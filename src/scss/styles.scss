@@ -1,6 +1,7 @@
 @import "variables.scss";
 
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
 .success {
   color: $success;
   font-weight: 600;
@@ -91,7 +92,10 @@ form {
 }
 
 // contacts
-
+.contacts {
+  overflow-x: scroll;
+  overflow-y: scroll;
+}
 .contacts img,
 .feed-img {
   @include image-size(3rem, 3rem, cover);
@@ -104,39 +108,54 @@ form {
 }
 
 .card-img {
+  border-radius: 0;
   @include image-size(15rem, 100%, cover);
+  transition: all 0.3s ease-in;
+  &:hover {
+    opacity: 0.7;
+  }
 }
 
-.card-img,
-.card-img-bottom {
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-}
 //.... profil page .....//
-.profil {
-  .profil-picture {
-    @include image-size(5rem, 5rem, cover);
-  }
-  .gallery img {
-    @include image-size(12rem, 100%, cover);
-  }
+.dropdown {
+  max-width: fit-content;
+  align-self: end;
+}
+.profil-picture {
+  @include image-size(10rem, 10rem, cover);
 }
 
 @media only screen and (min-width: 768px) {
   .main-navigation {
     backdrop-filter: blur(5px);
   }
-  .profil {
+
+  .profile {
     position: fixed;
-    top: 15%;
-    left: 0;
+    height: 100vh;
+    left: 4%;
+  }
+
+  .profil-info {
+    position: fixed;
+    height: 100vh;
     overflow-y: scroll;
+  }
+
+  .profil-extra-info {
+    position: fixed;
+    top: 5%;
+    z-index: 3;
+  }
+
+  .contacts {
+    margin-top: 10rem;
   }
 }
 @media only screen and (min-width: 1200px) {
   .events {
     position: fixed;
-    right: 2%;
+    right: 4%;
     top: 12%;
   }
 } ;

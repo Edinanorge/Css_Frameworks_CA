@@ -5,16 +5,45 @@ import {
   createImage,
   createLink,
   createLinkWithImage,
-  createEditPostModal,
-  createDeletePostModal,
+  createButton,
 } from "./helperFunctions.mjs";
+
+import { removePost } from "../api/posts/delete.mjs";
 
 export function userPostTemplate(postData) {
   if (!postData.media) postData.media = "https://picsum.photos/id/151/4288/3216";
-  const container = createElement("div", ["card", "bg-white", "text-dark", "feed", "mb-3", "mt-lg-3"]);
+
+  const container = createElement("div", ["card", "feed", "p-0", "mb-4"]);
+
+  const buttonContainer = createElement("div", ["d-flex", "justify-content-around", "align-self-end", "p-3"]);
+  container.appendChild(buttonContainer);
+
+  const card = createElement("div", ["card-body", "d-flex", "justify-content-between"]);
+  container.appendChild(card);
+
+  const deleteBtn = createButtonWhitTextContent(["btn", "border", "me-1"], "Delete");
+  deleteBtn.addEventListener("click", () => {
+    removePost(postData.id);
+  });
+  buttonContainer.appendChild(deleteBtn);
+
+  const editLink = createLink(`/post/edit/index.html?id=${postData.id}`, "", "Edit", ["btn", "btn-success", "ms-1"]);
+  buttonContainer.appendChild(editLink);
+
+  const cardBody = createElement("div", []);
+  card.appendChild(cardBody);
+
+  const title = createParagraf(postData.title, ["card-title", "fs-5", "fw-bolder"]);
+  cardBody.appendChild(title);
+
+  const body = createParagraf(postData.body, ["mb-3", "text-muted"]);
+  cardBody.appendChild(body);
+
+  const createdDate = createParagraf(`Updated: ${postData.updated.substring(0, 10)} `, ["text-muted", "fs-7"]);
+  cardBody.appendChild(createdDate);
 
   const linkWhitImage = createLinkWithImage(
-    `#`,
+    `/post/index.html?id=${postData.id}`,
     "View post",
     postData.media,
     `Image from ${postData.title}`,
@@ -22,34 +51,6 @@ export function userPostTemplate(postData) {
     ["card-img"]
   );
   container.appendChild(linkWhitImage);
-
-  const card = createElement("div", ["card-body"]);
-  container.appendChild(card);
-
-  const title = createParagraf(postData.title, ["card-title", "text-primary", "fw-bolder"]);
-  card.appendChild(title);
-
-  const body = createParagraf(postData.body, ["mb-3", "fw-lighter"]);
-  card.appendChild(body);
-
-  const buttonEdit = createButtonWhitTextContent(["card-link", "text-success", "btn", "border-success"], "Edit");
-  buttonEdit.setAttribute("data-bs-toggle", "modal");
-  buttonEdit.setAttribute("data-bs-target", "#editPostModal");
-  card.appendChild(buttonEdit);
-
-  const buttonDelete = createButtonWhitTextContent(
-    ["card-link", "text-danger", "btn", "border-danger", "ms-3"],
-    "Delete"
-  );
-  buttonEdit.setAttribute("data-bs-toggle", "modal");
-  buttonEdit.setAttribute("data-bs-target", "#deletePostModal");
-  card.appendChild(buttonDelete);
-
-  const editPostModal = createEditPostModal(postData);
-  card.append(editPostModal);
-
-  // const deletePostModal = createDeletePostModal(postData);
-  // container.appendChild(deletePostModal);
 
   return container;
 }

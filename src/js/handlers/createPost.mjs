@@ -10,6 +10,10 @@ export function submitCreatPostForm() {
       const post = Object.fromEntries(formData.entries());
 
       createPost(post);
+
+      setTimeout(() => {
+        location.reload();
+      }, 200);
     });
   }
 }

@@ -23,7 +23,7 @@ export async function createPost(postData) {
     } else {
       throw new Error(response.statusText);
     }
-  } catch (error) {
-    throw new Error(error);
+  } catch {
+    throw new Error("Bad response.");
   }
 }
