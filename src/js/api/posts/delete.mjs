@@ -15,7 +15,8 @@ export async function removePost(id) {
 
   if (response.ok) {
     const post = await response.json();
-    console.log(post);
+
+    location.reload();
     return post;
   } else {
     throw new Error(response.statusText);
