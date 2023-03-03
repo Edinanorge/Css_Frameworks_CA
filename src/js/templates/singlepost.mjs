@@ -7,8 +7,6 @@ import {
 } from "./helperFunctions.mjs";
 
 export function singlePostTemplate(postData) {
-  if (!postData.media) postData.media = "https://picsum.photos/200/300?grayscale";
-
   const container = createElement("div", ["card", "p-0", "feed", "mb-3"]);
 
   const cardHeader = createElement("div", ["d-flex", "flex-row", "align-items-center", "justify-content-between"]);

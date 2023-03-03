@@ -10773,6 +10773,20 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #241c37;
+  border-radius: 10px;
+}
+
 .success {
   color: #50875f;
   font-weight: 600;
@@ -10848,14 +10862,14 @@ form .btn-toggle-password {
 }
 
 .profil-extra-info img {
-  height: 5rem;
-  width: 5rem;
-  object-fit: cover;
+  height: auto;
+  width: 9rem;
+  object-fit: contain;
 }
 
 .contacts {
   overflow-x: scroll;
-  overflow-y: scroll;
+  scrollbar-width: none;
 }
 
 .contacts img,
@@ -10905,6 +10919,7 @@ form .btn-toggle-password {
     position: fixed;
     height: 100vh;
     overflow-y: scroll;
+    scrollbar-width: none;
   }
   .profil-extra-info {
     position: fixed;
@@ -10912,7 +10927,7 @@ form .btn-toggle-password {
     z-index: 3;
   }
   .contacts {
-    margin-top: 10rem;
+    margin-top: 15rem;
   }
 }
 @media only screen and (min-width: 1200px) {

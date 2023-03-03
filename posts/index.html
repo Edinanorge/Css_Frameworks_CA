@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="You can connect easily with your friends and family." />
-    <title>Social Media App | Posts page</title>
+    <title>SmileShare App | Posts page</title>
     <link rel="stylesheet" href="/dist/css/styles.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" />
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
@@ -18,8 +18,8 @@
       <nav class="navbar p-3">
         <div class="container-fluid">
           <!-- logo -->
-          <a title="Social Media posts" class="navbar-brand text-white fs-6 d-flex align-items-center mx-auto mx-sm-2" href="/index.html"
-            ><img src="/src/images/logo.png" alt="social media logo" class="me-1 img-fluid" />Social Media</a
+          <a title="SmileShare posts" class="navbar-brand text-white fs-6 d-flex align-items-center mx-sm-2" href="/posts/"
+            ><img src="/src/images/logo1.png" alt="SmileShare logo" class="me-1 img-fluid" />SmileShare</a
           >
           <!-- nav links / position fixed on mobil - sticky on descktop-->
           <ul class="nav d-flex justify-content-evenly align-items-center sm-w-100 fixed-bottom sticky-md-top ms-lg-5">
@@ -54,17 +54,15 @@
         <div class="profil-info  col-md-3 col-lg-2 ">
           <!-- profil extra info -->
           <div class="profil-extra-info bg-dark mt-4 mt-xxl-6 text-center p-5 ">
-            <img src="/src/images/logo.png" alt="profil picture" class="rounded-circle mx-auto text-center" />
-            <h1 class="fs-5 text-center">Social Media</h1>
-            <p class="text-secondary">Conect whit friends.</p>
-            
+            <img src="/src/images/logo1.png" alt="logo" class=" mx-auto text-center" />
+            <p class="text-secondary fs-7">Conect whit friends.</p> 
           </div>
+
           <!-- contacts  -->
           <div class="contacts d-flex flex-row flex-md-column justify-content-center" id="contactsContainer">
             <p class="d-none d-md-block s-5 mt-5 text-start text-muted fs-5">Users</p>
-          
-          
           </div>
+
           <!-- events -->
           <div class="events text-muted col-xl-2">
             <p class="fs-5 mt-5 pb-lg-0 text-start ms-2">Events</p>
@@ -99,6 +97,7 @@
               </li>
             </ul>
           </div>
+
         </div>
 
         <!-- flex 2 item -->
@@ -164,10 +163,27 @@
 
           <!-- search and filter -->
           <div class="d-flex align-items-center justify-content-between mb-5">
-            <div>
-              <button class="btn btn-outline-light active">All</button>
-              <button class="btn btn-outline-light">Tag1</button>
-              <button class="btn btn-outline-light">Tag2</button>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#filterModal">
+             Filter
+            </button>
+            
+            <!-- Modal -->
+            <div class="modal fade" id="filterModal" tabindex="-1" aria-labelledby="filterModalLabel" aria-hidden="true">
+              <div class="modal-dialog text-dark">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <p class="modal-title" id="filterModalLabel">Filter posts</p>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                 
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="filterBtn">Save changes</button>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <form class="d-flex align-items-center" role="search" id="searchForm">
@@ -192,7 +208,7 @@
 
     <footer class="footer mt-auto py-3">
       <div class="text-center">
-        <span class="text-muted">Social Media&copy; copyright</span>
+        <span class="text-muted">SmileShare&copy; copyright</span>
       </div>
     </footer>
   </body>

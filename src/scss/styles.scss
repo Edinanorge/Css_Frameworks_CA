@@ -2,6 +2,18 @@
 
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
+::-webkit-scrollbar {
+  width: 2px;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: $dark;
+  border-radius: 10px;
+}
+
 .success {
   color: $success;
   font-weight: 600;
@@ -88,13 +100,13 @@ form {
 
 // main
 .profil-extra-info img {
-  @include image-size(5rem, 5rem, cover);
+  @include image-size(auto, 9rem, contain);
 }
 
 // contacts
 .contacts {
   overflow-x: scroll;
-  overflow-y: scroll;
+  scrollbar-width: none;
 }
 .contacts img,
 .feed-img {
@@ -140,6 +152,7 @@ form {
     position: fixed;
     height: 100vh;
     overflow-y: scroll;
+    scrollbar-width: none;
   }
 
   .profil-extra-info {
@@ -149,7 +162,7 @@ form {
   }
 
   .contacts {
-    margin-top: 10rem;
+    margin-top: 15rem;
   }
 }
 @media only screen and (min-width: 1200px) {
