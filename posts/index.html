@@ -163,10 +163,28 @@
 
           <!-- search and filter -->
           <div class="d-flex align-items-center justify-content-between mb-5">
-            <button class="btn fs-3 me-auto me-md-1 d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#filterListingsModal">
-              <span class="me-2 fs-5">Filter</span>
-              <i class="fa fa-sliders" aria-hidden="true"></i>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#filterModal">
+             Filter
             </button>
+            
+            <!-- Modal -->
+            <div class="modal fade" id="filterModal" tabindex="-1" aria-labelledby="filterModalLabel" aria-hidden="true">
+              <div class="modal-dialog text-dark">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <p class="modal-title" id="filterModalLabel">Filter posts</p>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                 
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="filterBtn">Save changes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
 
             <form class="d-flex align-items-center" role="search" id="searchForm">
               <input
