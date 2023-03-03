@@ -8,8 +8,6 @@ import {
 } from "./helperFunctions.mjs";
 
 export function postTemplate(postData) {
-  if (!postData.media) postData.media = "https://picsum.photos/200/300?grayscale";
-
   const container = createElement("div", ["card", "p-0", "feed", "mb-3"]);
 
   const cardHeader = createElement("div", ["d-flex", "flex-row", "align-items-center", "justify-content-between"]);
@@ -18,11 +16,20 @@ export function postTemplate(postData) {
   const userContainer = createElement("div", ["d-flex", "flex-row", "align-items-center"]);
   cardHeader.appendChild(userContainer);
 
-  const userImg = createImage(
-    ["rounded-circle", "m-2", "border", "border-secondary", "border-2", "user-profile-picture"],
-    postData.author.avatar,
-    "Avatar"
-  );
+  const userImg = createElement("div", [
+    "rounded-circle",
+    "m-2",
+    "border",
+    "border-secondary",
+    "border-2",
+    "user-profile-picture",
+  ]);
+
+  if (postData.author.avatar) {
+    userImg.style.backgroundImage = ` url(${postData.author.avatar}`;
+    userImg.style.backgroundSize = "cover";
+  }
+
   userContainer.appendChild(userImg);
 
   const userName = createParagraf(postData.author.name, ["m-0"]);
@@ -42,15 +49,10 @@ export function postTemplate(postData) {
   const body = createParagraf(postData.body, ["mb-3", "text-muted"]);
   card.appendChild(body);
 
-  const linkWhitImage = createLinkWithImage(
-    `/post/index.html?id=${postData.id}`,
-    "View post",
-    postData.media,
-    `Image from ${postData.title}`,
-    [],
-    ["card-img", "mb-1"]
-  );
-  card.appendChild(linkWhitImage);
+  if (postData.media) {
+    const image = createImage(["card-img", "mb-1"], postData.media, "profile avatar");
+    card.appendChild(image);
+  }
 
   const linkContainer = createElement("div", ["d-flex", "justify-content-between", "align-items-center"]);
   card.appendChild(linkContainer);

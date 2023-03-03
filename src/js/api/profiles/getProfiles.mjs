@@ -7,8 +7,7 @@ export async function getProfiles() {
   const response = await fetchWhitToken(getProfilesUrl);
 
   if (response.ok) {
-    const profiles = await response.json();
-    return profiles;
+    return await response.json();
   } else {
     throw new Error(response.statusText);
   }

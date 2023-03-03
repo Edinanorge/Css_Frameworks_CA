@@ -11,15 +11,35 @@ import {
 import { removePost } from "../api/posts/delete.mjs";
 
 export function userPostTemplate(postData) {
-  if (!postData.media) postData.media = "https://picsum.photos/id/151/4288/3216";
+  const container = createElement("div", ["card", "feed", "p-0", "mb-3"]);
 
-  const container = createElement("div", ["card", "feed", "p-0", "mb-4"]);
+  const cardHeader = createElement("div", ["d-flex", "justify-content-between"]);
+  container.appendChild(cardHeader);
+
+  const userContainer = createElement("div", ["d-flex", "flex-row", "align-items-center", "ps-2"]);
+  cardHeader.appendChild(userContainer);
+
+  const userImg = createElement("div", [
+    "rounded-circle",
+    "m-2",
+    "border",
+    "border-secondary",
+    "border-2",
+    "user-profile-picture",
+  ]);
+
+  if (postData.author.avatar) {
+    userImg.style.backgroundImage = ` url(${postData.author.avatar}`;
+    userImg.style.backgroundSize = "cover";
+  }
+
+  userContainer.appendChild(userImg);
+
+  const userName = createParagraf(postData.author.name, ["m-0"]);
+  userContainer.appendChild(userName);
 
   const buttonContainer = createElement("div", ["d-flex", "justify-content-around", "align-self-end", "p-3"]);
-  container.appendChild(buttonContainer);
-
-  const card = createElement("div", ["card-body", "d-flex", "justify-content-between"]);
-  container.appendChild(card);
+  cardHeader.appendChild(buttonContainer);
 
   const deleteBtn = createButtonWhitTextContent(["btn", "border", "me-1"], "Delete");
   deleteBtn.addEventListener("click", () => {
@@ -30,8 +50,8 @@ export function userPostTemplate(postData) {
   const editLink = createLink(`/post/edit/index.html?id=${postData.id}`, "", "Edit", ["btn", "btn-success", "ms-1"]);
   buttonContainer.appendChild(editLink);
 
-  const cardBody = createElement("div", []);
-  card.appendChild(cardBody);
+  const cardBody = createElement("div", ["card-body"]);
+  container.appendChild(cardBody);
 
   const title = createParagraf(postData.title, ["card-title", "fs-5", "fw-bolder"]);
   cardBody.appendChild(title);
@@ -39,18 +59,18 @@ export function userPostTemplate(postData) {
   const body = createParagraf(postData.body, ["mb-3", "text-muted"]);
   cardBody.appendChild(body);
 
-  const createdDate = createParagraf(`Updated: ${postData.updated.substring(0, 10)} `, ["text-muted", "fs-7"]);
-  cardBody.appendChild(createdDate);
+  if (postData.media) {
+    const image = createLinkWithImage(
+      `/post/index.html?id=${postData.id}`,
+      "View post",
+      postData.media,
+      `Image from ${postData.title}`,
+      [],
+      ["card-img", "mb-1"]
+    );
 
-  const linkWhitImage = createLinkWithImage(
-    `/post/index.html?id=${postData.id}`,
-    "View post",
-    postData.media,
-    `Image from ${postData.title}`,
-    [],
-    ["card-img"]
-  );
-  container.appendChild(linkWhitImage);
+    cardBody.appendChild(image);
+  }
 
   return container;
 }
