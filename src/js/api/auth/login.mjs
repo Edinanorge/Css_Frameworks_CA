@@ -1,6 +1,6 @@
 import { url } from "/src/js/api/constants.mjs";
 import * as storage from "../../storage/index.mjs";
-import { displayMessage } from "../../helpers/displayMessage.mjs";
+import { displayMessage } from "../../display/displayMessage.mjs";
 
 export async function login(profile) {
   try {
@@ -14,7 +14,6 @@ export async function login(profile) {
     };
 
     const response = await fetch(loginUrl, options);
-    console.log(response);
 
     if (response.ok) {
       // Save user to sorage

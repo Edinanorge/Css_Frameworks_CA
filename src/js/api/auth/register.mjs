@@ -1,5 +1,5 @@
 import { url } from "/src/js/api/constants.mjs";
-import { displayMessage } from "../../helpers/displayMessage.mjs";
+import { displayMessage } from "../../display/displayMessage.mjs";
 
 export async function register(profile) {
   const registerUrl = `${url}/auth/register`;

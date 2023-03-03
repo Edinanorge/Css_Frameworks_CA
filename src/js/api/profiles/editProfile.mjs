@@ -1,7 +1,5 @@
-import { displayMessage } from "../../helpers/displayMessage.mjs";
 import { url } from "../constants.mjs";
 import { fetchWhitToken } from "../posts/headers.mjs";
-import { save } from "../../storage/index.mjs";
 
 export async function updateProfile(profileData) {
   if (!profileData.name) {
@@ -17,9 +15,7 @@ export async function updateProfile(profileData) {
   const response = await fetchWhitToken(updateProfileUrl, options);
 
   if (response.ok) {
-    const profile = await response.json();
-
-    return profile;
+    return await response.json();
   } else {
     throw new Error(response.statusText);
   }

@@ -1,6 +1,6 @@
 import { updateProfile, getProfile } from "../api/profiles/index.mjs";
 import * as storage from "../storage/index.mjs";
-import { displayMessage } from "../helpers/displayMessage.mjs";
+import { displayMessage } from "../display/displayMessage.mjs";
 
 export async function submitEditProfileForm() {
   const form = document.querySelector("#editProfile");

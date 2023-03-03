@@ -6,7 +6,7 @@ export async function getProfilePosts(name) {
     throw new Error("Get requires a user name");
   }
 
-  const getProfilePostsUrl = `${url}/profiles/${name}/posts`;
+  const getProfilePostsUrl = `${url}/profiles/${name}/posts?_author=true&_comments=true&_reactions=true`;
 
   const response = await fetchWhitToken(getProfilePostsUrl);
 

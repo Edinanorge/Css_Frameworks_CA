@@ -9,6 +9,7 @@ export function userTemplate(profileData) {
     "d-flex",
     "flex-column",
     "flex-md-row",
+    "align-items-center",
   ]);
 
   const img = createLinkWithImage(
@@ -22,10 +23,8 @@ export function userTemplate(profileData) {
 
   container.appendChild(img);
 
-  if (profileData) {
-    const paragraf = createParagraf(profileData.name, ["m-0", "ps-md-2"]);
-    container.appendChild(paragraf);
-  }
+  const paragraf = createParagraf(profileData.name, ["m-0", "ps-md-2"]);
+  container.appendChild(paragraf);
 
   return container;
 }
