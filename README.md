@@ -1,5 +1,5 @@
 # Social Media App
-![Screenshot Social Media App Home page](https://user-images.githubusercontent.com/52853951/215260904-ca9f71ac-c339-40bb-a923-28435562ee4f.png)
+![image](https://user-images.githubusercontent.com/52853951/222701759-03f3081f-ce95-44dc-b235-bfa351e60efc.png)
 
 
 This is a responsive front end for a Social Media App.
