@@ -1,9 +1,10 @@
 import {
   generateParagraphs,
   createElement,
-  createLinkWithImage,
   createParagraf,
   createImage,
+  createButton,
+  createLink,
 } from "./helperFunctions.mjs";
 
 export function singlePostTemplate(postData) {
@@ -39,15 +40,36 @@ export function singlePostTemplate(postData) {
   const body = createParagraf(postData.body, ["mb-3", "text-muted"]);
   card.appendChild(body);
 
-  const linkWhitImage = createLinkWithImage(
-    `/post/index.html?id=${postData.id}`,
-    "View post",
-    postData.media,
-    `Image from ${postData.title}`,
-    [],
-    ["card-img", "mb-1"]
-  );
-  card.appendChild(linkWhitImage);
+  const tag = createElement("SPAN", ["text-secondary", "ps-2", "fs-7"]);
+  tag.innerText = postData.tags.map((tag) => `#${tag}`).join(" ");
+  body.appendChild(tag);
+
+  if (postData.media) {
+    const image = createImage(["card-img", "mb-1"], postData.media, `Image from ${postData.title}`);
+    card.appendChild(image);
+  }
+
+  const linkContainer = createElement("div", ["d-flex", "justify-content-between", "align-items-center"]);
+  card.appendChild(linkContainer);
+
+  const buttonContainer = document.createElement("div");
+  linkContainer.appendChild(buttonContainer);
+
+  const buttonLike = createButton(["btn", "text-warning", "fs-6", "p-1"], "Like");
+  buttonLike.innerText = "👍";
+  buttonContainer.appendChild(buttonLike);
+
+  const buttonFunny = createButton(["btn", "text-warning", "fs-6", "p-1"], "Funny");
+  buttonFunny.innerText = "😂";
+  buttonContainer.appendChild(buttonFunny);
+
+  const buttonNeutral = createButton(["btn", "text-warning", "fs-6", "p-1"], "No comment");
+  buttonNeutral.innerText = "😒";
+  buttonContainer.appendChild(buttonNeutral);
+
+  const buttonLove = createButton(["btn", "text-warning", "fs-6", "p-1"], "Love");
+  buttonLove.innerText = "❤️";
+  buttonContainer.appendChild(buttonLove);
 
   const commentsContainer = createElement("div", ["text-muted"]);
   card.appendChild(commentsContainer);

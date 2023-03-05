@@ -18,7 +18,10 @@
       <nav class="navbar p-3">
         <div class="container-fluid">
           <!-- logo -->
-          <a title="SmileShare posts" class="navbar-brand text-white fs-6 d-flex align-items-center mx-sm-2" href="/posts/"
+          <a
+            title="SmileShare posts"
+            class="navbar-brand text-white fs-6 d-flex align-items-center mx-sm-2"
+            href="/posts/"
             ><img src="/src/images/logo1.png" alt="SmileShare logo" class="me-1 img-fluid" />SmileShare</a
           >
           <!-- nav links / position fixed on mobil - sticky on descktop-->
@@ -39,28 +42,36 @@
               <a title="Settings" class="nav-link text-white" href="#"><i class="bi bi-gear-fill"></i></a>
             </li>
           </ul>
-         
-          <div class="d-flex flex-row align-items-center justify-content-between ">
-          
-            <button class="btn btn-outline-light btn-md me-2" id="btnLogout">Log out</button>
+
+          <div class="d-flex flex-row align-items-center justify-content-between">
+            <button class="btn btn-outline-light btn-md me-2 btnLogout">Log out</button>
             <!-- Profil img -->
-            <img src="/src/images/sara.jpg" alt="profil picture" class="rounded-circle profil-img ms-1 avatar" />
+            <img src="" alt="profil picture" class="rounded-circle profil-img ms-1 avatar" />
           </div>
+        </div>
       </nav>
     </header>
+
     <main class="container">
       <div class="row g-md-5">
         <!-- flex 1 item -->
-        <div class="profil-info  col-md-3 col-lg-2 ">
+        <div class="profil-info col-md-3 col-lg-2">
           <!-- profil extra info -->
-          <div class="profil-extra-info bg-dark mt-4 mt-xxl-6 text-center p-5 ">
-            <img src="/src/images/logo1.png" alt="logo" class=" mx-auto text-center" />
-            <p class="text-secondary fs-7">Conect whit friends.</p> 
+          <div class="profil-extra-info bg-dark mt-xxl-6 text-center p-5">
+            <img src="/src/images/logo1.png" alt="logo" class="mx-auto text-center" />
+            <p class="text-secondary fs-7">Connect whit friends.</p>
           </div>
 
           <!-- contacts  -->
-          <div class="contacts d-flex flex-row flex-md-column justify-content-center" id="contactsContainer">
-            <p class="d-none d-md-block s-5 mt-5 text-start text-muted fs-5">Users</p>
+          <div class="contacts-container">
+            <p class="text-start text-muted fs-5">Users</p>
+            <div class="contacts d-flex flex-row flex-md-column justify-content-center" id="contactsContainer">
+              <div class="d-flex justify-content-center">
+                <div class="spinner-border" role="status">
+                  <span class="visually-hidden">Loading...</span>
+                </div>
+              </div>
+            </div>
           </div>
 
           <!-- events -->
@@ -68,120 +79,160 @@
             <p class="fs-5 mt-5 pb-lg-0 text-start ms-2">Events</p>
             <ul class="list-group-flush row d-lg-block p-0 m-1">
               <li class="list-group-item col d-md-flex align-items-start">
-                <p class="bg-primary p-3 m-1 d-inline-block">Jan.25</p>
+                <p class="bg-primary p-3 m-1 d-inline-block text-white">Jan.25</p>
                 <div>
-                  <div class="fw-bold me-1">Subheading</div>
+                  <span class="fw-bold me-1">Subheading</span>
                   <p class="fs-7">Content for event</p>
                 </div>
               </li>
               <li class="list-group-item col d-md-flex align-items-start">
-                <p class="bg-primary p-3 m-1 d-inline-block">Feb.01</p>
+                <p class="bg-primary p-3 m-1 d-inline-block text-white">Feb.01</p>
                 <div>
-                  <div class="fw-bold">Subheading</div>
+                  <span class="fw-bold">Subheading</span>
                   <p class="fs-7">Content for event</p>
                 </div>
               </li>
               <li class="list-group-item col d-md-flex align-items-start">
-                <p class="bg-primary p-3 m-1 d-inline-block">Feb.04</p>
+                <p class="bg-primary p-3 m-1 d-inline-block text-white">Feb.04</p>
                 <div>
-                  <div class="fw-bold">Subheading</div>
+                  <span class="fw-bold">Subheading</span>
                   <p class="fs-7">Content for event</p>
                 </div>
               </li>
               <li class="list-group-item col d-md-flex align-items-start">
-                <p class="bg-primary p-3 m-1 d-inline-block">Feb.08</p>
+                <p class="bg-primary p-3 m-1 d-inline-block text-white">Feb.08</p>
                 <div>
-                  <div class="fw-bold">Subheading</div>
+                  <span class="fw-bold">Subheading</span>
                   <p class="fs-7">Content for event</p>
                 </div>
               </li>
             </ul>
           </div>
-
         </div>
 
         <!-- flex 2 item -->
-        <div class="feeds col-md-8 col-lg-8 col-xl-6  col-xxl-7 offset-md-4 offset-lg-3 ">
+        <div class="feeds col-md-8 col-lg-8 col-xl-6 col-xxl-7 offset-md-4 offset-lg-3">
           <!-- create posts form -->
           <div class="border rounded my-5">
-            <button class="btn w-100 text-start" type="button" data-bs-toggle="collapse" data-bs-target="#createPostCollapse" aria-expanded="false" aria-controls="collapseExample">
+            <button
+              class="btn w-100 text-start"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#createPostCollapse"
+              aria-expanded="false"
+              aria-controls="collapseExample"
+            >
               <i class="bi bi-plus-circle-fill text-secondary fs-5 me-3"></i> Create a new post
             </button>
             <div class="collapse mb-3" id="createPostCollapse">
-              <div >
-                <form  class="mx-auto w-100" id="createPostForm">
-                  <div class="input-group-lg mt-5">
-                   
-                    <div class="form-floating mb-3">
-                      <input
-                        type="text"
-                        class="form-control border bg-input-color"
-                        name="title"
-                       maxlength="280"
-                       placeholder="Title"
-                       required
-                      />
-                      <label for="title">Title *</label>
-                    </div>
-
-                    <div class="form-floating mb-3">
-                      <textarea
-                        type="text"
-                        class="form-control border bg-input-color"
-                        name="body"
-                        placeholder="Body"
-                        
-                      ></textarea>
-                      <label for="body">Body</label>
-                    </div>
-
-                    <div class="form-floating mb-3">
-                      <input
-                        type="text"
-                        class="form-control border bg-input-color"
-                        name="tags"
-                        placeholder="tags"
-                       />
-                      <label for="tags">Tags</label>
-                    </div>
-
-                    <div class="form-floating mb-3">
-                      <input
-                        type="url"
-                        class="form-control border bg-input-color"
-                        name="media"
-                        placeholder="media"
-                      />
-                      <label for="media">Media</label>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-lg w-100 my-3">Send</button> 
+              <form class="mx-auto w-100" id="createPostForm">
+                <div class="input-group-lg mt-5">
+                  <div class="form-floating mb-3">
+                    <input
+                      type="text"
+                      class="form-control border bg-input-color"
+                      name="title"
+                      maxlength="280"
+                      placeholder="Title"
+                      required
+                    />
+                    <label for="title">Title *</label>
                   </div>
-                </form>
-              </div>
+
+                  <div class="form-floating mb-3">
+                    <textarea
+                      type="text"
+                      class="form-control border bg-input-color"
+                      name="body"
+                      placeholder="Body"
+                      row="3"
+                    ></textarea>
+                    <label for="body">Body</label>
+                  </div>
+
+                  <div class="form-floating mb-3">
+                    <input
+                      type="text"
+                      class="form-control border bg-input-color"
+                      name="tags"
+                      placeholder="tags"
+                      title="Tags must be separeted with space."
+                      pattern="^[0-9a-zA-Z_ ]*$"
+                    />
+                    <label for="tags">Tags</label>
+                  </div>
+
+                  <div class="form-floating mb-3">
+                    <input type="url" class="form-control border bg-input-color" name="media" placeholder="media" />
+                    <label for="media">Media(url)</label>
+                  </div>
+                  <button type="submit" class="btn btn-primary btn-lg w-100 my-3">Send</button>
+                </div>
+              </form>
             </div>
           </div>
 
           <!-- search and filter -->
           <div class="d-flex align-items-center justify-content-between mb-5">
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#filterModal">
-             Filter
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              Filter
             </button>
-            
+
             <!-- Modal -->
-            <div class="modal fade" id="filterModal" tabindex="-1" aria-labelledby="filterModalLabel" aria-hidden="true">
-              <div class="modal-dialog text-dark">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <p class="modal-title" id="filterModalLabel">Filter posts</p>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                 
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" id="filterBtn">Save changes</button>
-                  </div>
+            <div
+              class="modal fade"
+              id="exampleModal"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content bg-dark">
+                  <form class="mx-auto w-100 modal-body mx-lg-2" id="filterForm">
+                    <div class="modal-header">
+                      <p class="modal-title fs-5" id="exampleModalLabel">Filter Posts</p>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="my-5">
+                      <label for="sort">Sort by:</label>
+                      <select
+                        class="form-select form-select-md mt-1"
+                        id="sort"
+                        name="sort"
+                        aria-label=".form-select-sm example"
+                      >
+                        <option value="title">Title</option>
+                        <option value="created">Created</option>
+                      </select>
+                    </div>
+                    <div class="mb-5">
+                      <label for="sortOrder">Sort by order:</label>
+                      <select
+                        class="form-select form-select-md mt-1"
+                        id="sortOrder"
+                        name="sortOrder"
+                        aria-label=".form-select-sm example"
+                      >
+                        <option value="desc">desc</option>
+                        <option value="asc">asc</option>
+                      </select>
+                    </div>
+                    <div class="mb-5">
+                      <label for="tag">Filter by tags:</label>
+                      <input
+                        type="text"
+                        class="form-control border bg-input-color mt-1"
+                        name="tag"
+                        title="You can filter by one tag at a time"
+                        id="tag"
+                        required
+                      />
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="submit" class="btn btn-primary">Filter</button>
+                    </div>
+                  </form>
                 </div>
               </div>
             </div>
@@ -192,6 +243,7 @@
                 type="search"
                 placeholder="Search"
                 aria-label="Search input"
+                id="searchInput"
               />
               <button title="Search" class="btn btn-primary ms-1" type="submit" aria-label="search">
                 <i class="bi bi-search"></i>
@@ -200,9 +252,14 @@
           </div>
 
           <!-- feeds -->
-          <div class="row" id="postsContainer"></div>
+          <div class="row" id="postsContainer">
+            <div class="text-center" style="height: 90vh">
+              <div class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </div>
+          </div>
         </div>
-
       </div>
     </main>
 

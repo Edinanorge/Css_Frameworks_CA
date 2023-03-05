@@ -11,7 +11,7 @@ export function headers() {
 
 export async function fetchWhitToken(url, options = {}) {
   return fetch(url, {
-    ...options,
     headers: headers(),
+    ...options,
   });
 }
