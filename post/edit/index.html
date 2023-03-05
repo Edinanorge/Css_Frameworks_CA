@@ -54,9 +54,9 @@
           </ul>
 
           <div class="d-flex flex-row align-items-center justify-content-between">
-            <button class="btn btn-outline-light btn-md me-2" id="btnLogout">Log out</button>
+            <button class="btn btn-outline-light btn-md me-2 btnLogout">Log out</button>
             <!-- Profil img -->
-            <img src="/src/images/sara.jpg" alt="profil picture" class="rounded-circle profil-img ms-1" />
+            <img src="" alt="profil picture" class="rounded-circle profil-img ms-1" />
           </div>
         </div>
       </nav>
@@ -64,8 +64,13 @@
 
     <main>
       <div class="container">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb m-5">
+            <li class="breadcrumb-item"><a class="text-secondary" href="/profile/">Profile</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Edit Post</li>
+          </ol>
+        </nav>
         <div class="row">
-          <p class="text-center fs-5 mt-5">Edit Post</p>
           <div class="col-sm-12 col-lg-6 mt-5" id="editSinglePostContainer"></div>
           <div class="col-sm-12 col-lg-6">
             <form class="mx-auto w-100" id="editPostForm">
@@ -87,12 +92,20 @@
                     class="form-control border bg-input-color"
                     name="body"
                     placeholder="Body"
+                    row="3"
                   ></textarea>
                   <label for="body">Body</label>
                 </div>
 
                 <div class="form-floating mb-3">
-                  <input type="text" class="form-control border bg-input-color" name="tags" placeholder="tags" />
+                  <input
+                    type="text"
+                    class="form-control border bg-input-color"
+                    name="tags"
+                    placeholder="tags"
+                    title="Tags must be separeted by space."
+                    pattern="^[0-9a-zA-Z_ ]*$"
+                  />
                   <label for="tags">Tags</label>
                 </div>
 
