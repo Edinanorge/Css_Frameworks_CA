@@ -1,5 +1,3 @@
-import { updatePost } from "../api/posts/update.mjs";
-
 export function createElement(type, classes) {
   const element = document.createElement(type);
   element.classList.add(...classes);
@@ -67,7 +65,7 @@ export function generateParagraphs(arr) {
   const paragraphElements = [];
 
   arr.forEach((obj) => {
-    const paragraph = createParagraf(`- ${obj.owner} : ${obj.body}`, ["ms-2"]);
+    const paragraph = createParagraf(`💬 ${obj.owner} : ${obj.body}`, ["ms-2"]);
     paragraphElements.push(paragraph);
   });
 

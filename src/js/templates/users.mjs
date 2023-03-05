@@ -1,27 +1,31 @@
-import { createElement, createLinkWithImage, createParagraf } from "./helperFunctions.mjs";
+import { createElement, createLink, createParagraf } from "./helperFunctions.mjs";
 
 export function userTemplate(profileData) {
-  if (!profileData.avatar) profileData.avatar = "https://picsum.photos/200/300?grayscale";
-
-  const container = createElement("div", [
+  const container = createLink("#", "Link to user profile", "", [
     "text-white",
     "text-decoration-none",
     "d-flex",
     "flex-column",
-    "flex-md-row",
+    "flex-lg-row",
     "align-items-center",
   ]);
 
-  const img = createLinkWithImage(
-    "#",
-    "Link to user profile.",
-    profileData.avatar,
-    "Profile picture",
-    [, "d-block"],
-    ["rounded-circle", "m-1", "border", "border-secondary", "border-2", "user-profile-picture"]
-  );
+  const userImg = createElement("div", [
+    "rounded-circle",
+    "m-2",
+    "border",
+    "border-secondary",
+    "bg-card",
+    "border-1",
+    "user-profile-picture",
+  ]);
 
-  container.appendChild(img);
+  if (profileData.avatar) {
+    userImg.style.backgroundImage = ` url(${profileData.avatar}`;
+    userImg.style.backgroundSize = "cover";
+  }
+
+  container.appendChild(userImg);
 
   const paragraf = createParagraf(profileData.name, ["m-0", "ps-md-2"]);
   container.appendChild(paragraf);

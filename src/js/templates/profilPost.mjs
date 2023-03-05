@@ -50,7 +50,11 @@ export function userPostTemplate(postData) {
   const editLink = createLink(`/post/edit/index.html?id=${postData.id}`, "", "Edit", ["btn", "btn-success", "ms-1"]);
   buttonContainer.appendChild(editLink);
 
-  const cardBody = createElement("div", ["card-body"]);
+  const cardBody = createLink(`/post/index.html?id=${postData.id}`, "", "", [
+    "card-body",
+    "text-decoration-none",
+    "text-white",
+  ]);
   container.appendChild(cardBody);
 
   const title = createParagraf(postData.title, ["card-title", "fs-5", "fw-bolder"]);
@@ -59,16 +63,12 @@ export function userPostTemplate(postData) {
   const body = createParagraf(postData.body, ["mb-3", "text-muted"]);
   cardBody.appendChild(body);
 
-  if (postData.media) {
-    const image = createLinkWithImage(
-      `/post/index.html?id=${postData.id}`,
-      "View post",
-      postData.media,
-      `Image from ${postData.title}`,
-      [],
-      ["card-img", "mb-1"]
-    );
+  const tag = createElement("SPAN", ["text-secondary", "ps-2", "fs-7"]);
+  tag.innerText = postData.tags.map((tag) => `#${tag}`).join(" ");
+  body.appendChild(tag);
 
+  if (postData.media) {
+    const image = createImage(["card-img", "mb-1"], postData.media, `Image from ${postData.title}`);
     cardBody.appendChild(image);
   }
 

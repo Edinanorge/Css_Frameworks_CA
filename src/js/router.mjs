@@ -1,6 +1,9 @@
 import * as liseners from "./handlers/index.mjs";
 import * as ui from "./display/index.mjs";
 
+import { setAvatar } from "./handlers/setAvatar.mjs";
+import { logout } from "./api/auth/logout.mjs";
+
 export default function router() {
   const path = location.pathname;
 
@@ -14,23 +17,36 @@ export default function router() {
       return;
 
     case "/profile/":
-      liseners.submitCreatPostForm();
-      liseners.submitEditProfileForm();
+      setAvatar();
 
       ui.displayUserPosts();
+
+      liseners.submitCreatPostForm();
+      liseners.submitEditProfileForm();
       return;
 
     case "/posts/":
+      setAvatar();
+
       ui.displayPosts();
       ui.displayContacts();
 
+      liseners.submitFilterForm();
       liseners.submitCreatPostForm();
+      liseners.search();
+
       return;
 
     case "/post/index.html":
+      setAvatar();
+
       ui.displaySingelPost();
+
+      liseners.submitCommentForm();
       return;
     case "/post/edit/index.html":
+      setAvatar();
+
       liseners.submitEditPostForm();
   }
 }

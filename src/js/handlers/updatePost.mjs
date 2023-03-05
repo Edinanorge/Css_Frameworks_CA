@@ -23,7 +23,6 @@ export async function submitEditPostForm() {
       const form = e.target;
       const formData = new FormData(form);
       const post = Object.fromEntries(formData.entries());
-      console.log(post);
 
       post.id = id;
 
@@ -31,7 +30,7 @@ export async function submitEditPostForm() {
 
       setTimeout(() => {
         location.reload();
-      }, 300);
+      }, 200);
     });
   }
 }
