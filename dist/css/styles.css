@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
 /*!
  * Bootstrap  v5.2.3 (https://getbootstrap.com/)
  * Copyright 2011-2022 The Bootstrap Authors
@@ -49,7 +50,7 @@
   --bs-black-rgb: 45, 35, 69;
   --bs-body-color-rgb: 248, 248, 247;
   --bs-body-bg-rgb: 36, 28, 55;
-  --bs-font-sans-serif: "Roboto", sans-serif;
+  --bs-font-sans-serif: "Poppins", sans-serif;
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(248, 248, 247, 0.15), rgba(248, 248, 247, 0));
   --bs-body-font-family: var(--bs-font-sans-serif);
@@ -309,7 +310,7 @@ table {
 caption {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-  color: #adb5bd;
+  color: #d2d6db;
   text-align: left;
 }
 
@@ -1980,7 +1981,7 @@ progress {
 .form-text {
   margin-top: 0.25rem;
   font-size: 0.875em;
-  color: #adb5bd;
+  color: #d2d6db;
 }
 
 .form-control {
@@ -4739,7 +4740,7 @@ textarea.form-control-lg {
 }
 
 .list-group {
-  --bs-list-group-color: #adb5bd;
+  --bs-list-group-color: #d2d6db;
   --bs-list-group-bg: #241c37;
   --bs-list-group-border-color: rgba(45, 35, 69, 0.125);
   --bs-list-group-border-width: 1px;
@@ -8045,7 +8046,7 @@ textarea.form-control-lg {
 
 .text-muted {
   --bs-text-opacity: 1;
-  color: #adb5bd !important;
+  color: #d2d6db !important;
 }
 
 .text-black-50 {
@@ -10774,17 +10775,17 @@ textarea.form-control-lg {
   }
 }
 ::-webkit-scrollbar {
-  width: 2px;
+  width: 5px;
 }
 
+/* Track */
 ::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px grey;
-  border-radius: 10px;
+  background: #241c37;
 }
 
+/* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #241c37;
-  border-radius: 10px;
+  background: #888;
 }
 
 .success {
@@ -10798,33 +10799,6 @@ textarea.form-control-lg {
 
 .bg-input-color {
   background-color: #241c37;
-}
-
-.user-profile-picture {
-  height: 2.5rem;
-  width: 2.5rem;
-  object-fit: cover;
-}
-
-.btn-login {
-  transition: all 0.3s ease;
-}
-.btn-login:hover {
-  background-color: #59227e;
-}
-
-form {
-  max-width: 28rem;
-}
-form a {
-  text-decoration: none;
-}
-form a:hover {
-  text-decoration: underline;
-}
-form .btn-toggle-password {
-  top: 16%;
-  right: 1%;
 }
 
 .main-navigation {
@@ -10861,6 +10835,33 @@ form .btn-toggle-password {
   box-shadow: 0 -2px 0 #999999 inset;
 }
 
+form {
+  max-width: 28rem;
+}
+form a {
+  text-decoration: none;
+}
+form a:hover {
+  text-decoration: underline;
+}
+form .btn-toggle-password {
+  top: 16%;
+  right: 1%;
+}
+
+.btn-login {
+  transition: all 0.3s ease;
+}
+.btn-login:hover {
+  background-color: #59227e;
+}
+
+.user-profile-picture {
+  height: 2.5rem;
+  width: 2.5rem;
+  object-fit: cover;
+}
+
 .profil-extra-info img {
   height: auto;
   width: 9rem;
@@ -10869,7 +10870,6 @@ form .btn-toggle-password {
 
 .contacts {
   overflow-x: scroll;
-  scrollbar-width: none;
 }
 
 .contacts img,
@@ -10893,11 +10893,6 @@ form .btn-toggle-password {
 }
 .card-img:hover {
   opacity: 0.7;
-}
-
-.dropdown {
-  max-width: fit-content;
-  align-self: end;
 }
 
 .profil-picture {
@@ -10926,8 +10921,8 @@ form .btn-toggle-password {
     top: 5%;
     z-index: 3;
   }
-  .contacts {
-    margin-top: 15rem;
+  .contacts-container {
+    margin-top: 20rem;
   }
 }
 @media only screen and (min-width: 1200px) {
