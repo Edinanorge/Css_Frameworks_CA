@@ -9,7 +9,7 @@ export async function createPost(postData) {
         title: postData.title,
         body: postData.body,
         media: postData.media,
-        tags: postData.tags.split(","),
+        tags: postData.tags.split(" "),
       }),
       method: "POST",
     };
