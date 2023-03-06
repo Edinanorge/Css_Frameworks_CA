@@ -52,15 +52,22 @@
               ></a>
             </li>
           </ul>
-          <button class="btn btn-outline-light btn-md me-2" id="btnLogout">Log out</button>
-            <img src="/src/images/sara.jpg" alt="profil picture" class="rounded-circle profil-img ms-1 avatar" />
+          <button class="btn btn-outline-light btn-md me-2 btnLogout">Log out</button>
+            <img src="" alt="profil picture" class="rounded-circle profil-img ms-1 avatar" />
           </div>
         </div>
       </nav>
     </header>
 
     <main>
+     
       <div class="container">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb m-5">
+            <li class="breadcrumb-item"><a class="text-secondary" href="/profile/">Profile</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Post</li>
+          </ol>
+        </nav>
         <div class="row">
           <div class="col-sm-12 col-md-8 mx-auto p-3" id="singlePostContainer">
             <div class="card bg-white text-dark feed mt-lg-3"></div>
@@ -69,15 +76,17 @@
             <form class="mx-auto w-100" id="commentForm">
               <input type="hidden" name="id" placeholder="id" required />
               <div class="input-group-lg mt-5">
+               
                 <div class="form-floating mb-3">
                   <input
                     type="text"
                     class="form-control border bg-input-color"
-                    name="Leave a comment"
+                    name="body"
                     maxlength="280"
                     placeholder="Leave a comment"
+                    required
                   />
-                  <label for="title">Leave a comment... </label>
+                  <label for="title">Leave a comment</label>
                 </div>
 
                 <button type="submit" class="btn btn-primary btn-lg w-100 my-3">Send</button>
