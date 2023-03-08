@@ -13,16 +13,12 @@ export async function search() {
       const searchValue = formInput.value.trim();
 
       const filteredSearch = posts.filter((post) => {
-        if (!post.title || !post.body || !post.author.name) {
+        if (!post.title || !post.body) {
           return false;
         }
-        return (
-          post.title.toLowerCase().includes(searchValue) ||
-          post.body.toLowerCase().includes(searchValue) ||
-          post.author.name.toLowerCase().includes(searchValue)
-        );
+        return post.title.toLowerCase().includes(searchValue) || post.body.toLowerCase().includes(searchValue);
       });
-      console.log(filteredSearch);
+
       const container = document.querySelector("#postsContainer");
       container.innerHTML = "";
       renderPostTemplates(filteredSearch, container);

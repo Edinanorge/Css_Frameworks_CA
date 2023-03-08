@@ -15,7 +15,9 @@ export async function getPosts() {
     const response = await fetchWhitToken(getPostsUrl);
 
     if (response.ok) {
-      return await response.json();
+      const posts = await response.json();
+      console.log(posts);
+      return posts;
     } else {
       throw new Error(response.statusText);
     }
@@ -23,7 +25,6 @@ export async function getPosts() {
     throw new Error(error);
   }
 }
-
 
 /**
  * Send a get reqest to teh Api to get a specific post
