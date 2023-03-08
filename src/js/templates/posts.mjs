@@ -1,4 +1,12 @@
-import { createButton, createElement, createLink, createParagraf, createImage } from "./helperFunctions.mjs";
+import {
+  createButton,
+  createElement,
+  createLink,
+  createParagraf,
+  createImage,
+  createCounter,
+} from "./helperFunctions.mjs";
+import { reactPost } from "../api/posts/react.mjs";
 
 export function postTemplate(postData) {
   const container = createElement("div", ["card", "p-0", "feed", "mb-3"]);
@@ -66,18 +74,38 @@ export function postTemplate(postData) {
 
   const buttonLike = createButton(["btn", "text-warning", "fs-6", "p-1"], "Like");
   buttonLike.innerText = "👍";
+
+  if (postData.reactions)
+    postData.reactions.map((reaction) => createCounter(reaction, buttonLike.innerText, buttonLike));
+
+  buttonLike.addEventListener("click", () => reactPost(postData, buttonLike.innerText));
   buttonContainer.appendChild(buttonLike);
 
   const buttonFunny = createButton(["btn", "text-warning", "fs-6", "p-1"], "Funny");
   buttonFunny.innerText = "😂";
+
+  if (postData.reactions)
+    postData.reactions.map((reaction) => createCounter(reaction, buttonFunny.innerText, buttonFunny));
+
+  buttonFunny.addEventListener("click", () => reactPost(postData, buttonFunny.innerText));
   buttonContainer.appendChild(buttonFunny);
 
   const buttonNeutral = createButton(["btn", "text-warning", "fs-6", "p-1"], "No comment");
   buttonNeutral.innerText = "😒";
+
+  if (postData.reactions)
+    postData.reactions.map((reaction) => createCounter(reaction, buttonNeutral.innerText, buttonNeutral));
+
+  buttonNeutral.addEventListener("click", () => reactPost(postData, buttonNeutral.innerText));
   buttonContainer.appendChild(buttonNeutral);
 
   const buttonLove = createButton(["btn", "text-warning", "fs-6", "p-1"], "Love");
   buttonLove.innerText = "❤️";
+
+  if (postData.reactions)
+    postData.reactions.map((reaction) => createCounter(reaction, buttonLove.innerText, buttonLove));
+
+  buttonLove.addEventListener("click", () => reactPost(postData, buttonLove.innerText));
   buttonContainer.appendChild(buttonLove);
 
   const linkComment = createLink(`/post/index.html?id=${postData.id}`, "Commet", "Leave a commet", ["btn", "border"]);

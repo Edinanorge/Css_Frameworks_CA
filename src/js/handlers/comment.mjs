@@ -1,5 +1,7 @@
 import { commentPost } from "../api/posts/comment.mjs";
-
+/**
+ * This function is a handler function which adds a submit eventLisener to the comment from
+ */
 export function submitCommentForm() {
   const form = document.querySelector("#commentForm");
 
@@ -12,7 +14,6 @@ export function submitCommentForm() {
       const form = e.target;
       const formData = new FormData(form);
       const comment = Object.fromEntries(formData.entries());
-      console.log(comment);
 
       comment.id = id;
       commentPost(comment);

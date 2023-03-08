@@ -1,5 +1,7 @@
 import { createPost } from "../api/posts/create.mjs";
-
+/**
+ * This is a handler function. It gives a submit event to the createPost form
+ */
 export function submitCreatPostForm() {
   const form = document.querySelector("#createPostForm");
   if (form) {

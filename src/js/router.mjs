@@ -18,6 +18,7 @@ export default function router() {
 
     case "/profile/":
       setAvatar();
+      logout();
 
       ui.displayUserPosts();
 
@@ -27,6 +28,7 @@ export default function router() {
 
     case "/posts/":
       setAvatar();
+      logout();
 
       ui.displayPosts();
       ui.displayContacts();
@@ -39,6 +41,7 @@ export default function router() {
 
     case "/post/index.html":
       setAvatar();
+      logout();
 
       ui.displaySingelPost();
 
@@ -46,6 +49,7 @@ export default function router() {
       return;
     case "/post/edit/index.html":
       setAvatar();
+      logout();
 
       liseners.submitEditPostForm();
   }
