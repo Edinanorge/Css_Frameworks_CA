@@ -1,6 +1,13 @@
 import { url } from "../constants.mjs";
 import { fetchWhitToken } from "../posts/headers.mjs";
 
+/**
+ * This function sends a put request to the API to change the profile avatar
+ * @param {object} profileData -Data collected from a form name and avatar(url)
+ * @returns
+ *
+ */
+
 export async function updateProfile(profileData) {
   if (!profileData.name) {
     throw new Error("Update requires a name");

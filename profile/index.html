@@ -129,7 +129,14 @@
                     </div>
 
                     <div class="form-floating mb-3">
-                      <input type="text" class="form-control border bg-input-color" name="tags" placeholder="tags" />
+                      <input
+                        type="text"
+                        class="form-control border bg-input-color"
+                        name="tags"
+                        placeholder="tags"
+                        pattern="^[0-9a-zA-Z_,]*$"
+                        title="Tags must be separeted by comma."
+                      />
                       <label for="tags">Tags</label>
                     </div>
 

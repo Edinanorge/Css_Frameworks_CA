@@ -2,6 +2,17 @@ import { url } from "/src/js/api/constants.mjs";
 import * as storage from "../../storage/index.mjs";
 import { displayMessage } from "../../display/displayMessage.mjs";
 
+/**
+ * This function sending profile object collected from login form and send it to Api, saving the returned user object to Local storage
+ * @param {object} profile This is the user profile collected from a login form
+ * @returns Returns a User object whit accessToken
+ * @examlpe
+ * 
+ */
+
+
+
+
 export async function login(profile) {
   try {
     const loginUrl = `${url}/auth/login`;
@@ -21,9 +32,6 @@ export async function login(profile) {
 
       storage.save("token", accessToken);
       storage.save("user", user);
-
-      // display a message to the user
-      displayMessage("loginFeedback", "User loged in.", "success");
 
       // change the location
       setTimeout(() => {
