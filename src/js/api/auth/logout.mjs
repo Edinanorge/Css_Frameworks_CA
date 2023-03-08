@@ -1,5 +1,6 @@
 import { clear } from "../../storage/clear.mjs";
 
+
 export function logout() {
   const btnLogout = document.querySelectorAll(".btnLogout");
 

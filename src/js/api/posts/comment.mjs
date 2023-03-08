@@ -1,13 +1,24 @@
 import { url } from "../constants.mjs";
 import { fetchWhitToken } from "./headers.mjs";
 
-export async function commentPost(postData) {
+/**
+ * This function send a post reqest to the Api whit the comment data object 
+ * @param {object} postData This is the data collected from a form.
+ * @returns If the respons oke than return the commnet object.
+ * @example 
+ * ```js
+ * const comment= {"Hello word"}
+ * commnetPost(comment);
+ * ```
+ */
+
+export async function commentPost(commentData) {
   try {
-    if (!postData.id) throw new Error("Comment requires a postId");
-    const commentUrl = `${url}/posts/${postData.id}/comment`;
+    if (!commentData.id) throw new Error("Comment requires a postId");
+    const commentUrl = `${url}/posts/${commentData.id}/comment`;
 
     const options = {
-      body: JSON.stringify(postData),
+      body: JSON.stringify(commentData),
       method: "POST",
     };
 

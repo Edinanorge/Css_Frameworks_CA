@@ -1,6 +1,13 @@
 import { url } from "../constants.mjs";
 import { fetchWhitToken } from "./headers.mjs";
-
+/**
+ * This function sends a request to the Api to get posts
+ * @returns Posts
+ * @example
+ * ```js
+ * getPosts
+ * ```
+ */
 export async function getPosts() {
   try {
     const getPostsUrl = `${url}/posts?_author=true&_comments=true&_reactions=true`;
@@ -8,17 +15,25 @@ export async function getPosts() {
     const response = await fetchWhitToken(getPostsUrl);
 
     if (response.ok) {
-      const post = await response.json();
-      return post;
+      return await response.json();
     } else {
-      console.log(response);
       throw new Error(response.statusText);
     }
   } catch (error) {
-    console.log(error);
+    throw new Error(error);
   }
 }
 
+
+/**
+ * Send a get reqest to teh Api to get a specific post
+ * @param {number} id -Id of the post you want to get from the Api
+ * @returns the post
+ * @example
+ * ```js
+ * getPost(6798)
+ * ```
+ */
 export async function getPost(id) {
   try {
     if (!id) {
