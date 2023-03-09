@@ -1,9 +1,9 @@
 /**
- * This function is just a helper function, to give feedback to the user
- * @param {string} container -The container id were the messege needs to be dispalyed
- * @param {string} message -The messege we want to dispaly
+ * This function is a helper function, to give feedback to the user
+ * @param {string} container -The container id were the message needs to be displayed
+ * @param {string} message -The message we want to display
  * @param {string} style -The styles for the container..
- * @example 
+ * @example
  *  ```js
  * displayMessage("#message","Fail Password", "error")
  */

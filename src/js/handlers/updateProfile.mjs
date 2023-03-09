@@ -3,6 +3,10 @@ import * as storage from "../storage/index.mjs";
 import { displayMessage } from "../display/displayMessage.mjs";
 import { setAvatar } from "./setAvatar.mjs";
 
+/**
+ * This function edits the profile avatar picture, nd displaying user data like name and email
+ */
+
 export function submitEditProfileForm() {
   const form = document.querySelector("#editProfile");
 

@@ -3,15 +3,12 @@ import * as storage from "../../storage/index.mjs";
 import { displayMessage } from "../../display/displayMessage.mjs";
 
 /**
- * This function sending profile object collected from login form and send it to Api, saving the returned user object to Local storage
+ * This function sending profile object collected from login form and send it to API, saving the returned user object to Local storage
  * @param {object} profile This is the user profile collected from a login form
  * @returns Returns a User object whit accessToken
  * @examlpe
- * 
+ *
  */
-
-
-
 
 export async function login(profile) {
   try {

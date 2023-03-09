@@ -2,6 +2,12 @@ import { updatePost } from "../api/posts/update.mjs";
 import * as posts from "../api/posts/index.mjs";
 import * as templates from "../templates/index.mjs";
 
+/**
+ * This function adds a submit event to edit post from
+ * Collecting the id from URL and displaying a single post by id
+ *
+ */
+
 export async function submitEditPostForm() {
   const form = document.querySelector("#editPostForm");
 

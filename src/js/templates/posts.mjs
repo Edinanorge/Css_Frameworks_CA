@@ -8,6 +8,13 @@ import {
 } from "./helperFunctions.mjs";
 import { reactPost } from "../api/posts/react.mjs";
 
+/**
+ * This functon makes the template for the displayed posts.
+ * @param {object} postData -Post data from the API
+ * @returns  HTML 
+ */
+
+
 export function postTemplate(postData) {
   const container = createElement("div", ["card", "p-0", "feed", "mb-3"]);
 

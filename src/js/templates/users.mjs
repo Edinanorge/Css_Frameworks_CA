@@ -1,5 +1,9 @@
 import { createElement, createLink, createParagraf } from "./helperFunctions.mjs";
-
+/**
+ * This function makes a template for the users
+ * @param {*} profileData profile data from the API
+ * @returns HTML
+ */
 export function userTemplate(profileData) {
   const container = createLink("#", "Link to user profile", "", [
     "text-white",

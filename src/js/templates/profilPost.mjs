@@ -3,12 +3,15 @@ import {
   createParagraf,
   createElement,
   createImage,
-  createLink,
-  createLinkWithImage,
-  createButton,
+  createLink
 } from "./helperFunctions.mjs";
-
 import { removePost } from "../api/posts/delete.mjs";
+
+/**
+ * THis function creates template for post form specific user, whit edit , and delete buttons
+ * @param {object} postData -Post data form API
+ * @returns HTML 
+ */
 
 export function userPostTemplate(postData) {
   const container = createElement("div", ["card", "feed", "p-0", "mb-3"]);

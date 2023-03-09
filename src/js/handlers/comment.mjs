@@ -1,6 +1,6 @@
 import { commentPost } from "../api/posts/comment.mjs";
 /**
- * This function is a handler function which adds a submit eventLisener to the comment from
+ * This function is a handler function which adds a submit eventListener to the comment from
  */
 export function submitCommentForm() {
   const form = document.querySelector("#commentForm");

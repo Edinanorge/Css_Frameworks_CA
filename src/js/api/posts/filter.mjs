@@ -3,7 +3,7 @@ import { url } from "../constants.mjs";
 import { fetchWhitToken } from "./headers.mjs";
 
 /**
- * This function sends a request to the Api whit query string parameters collected form a form.
+ * This function sends a request to the API whit query string parameters collected form a form.
  * @param {string} query
  * @returns the filtered posts
  * @example

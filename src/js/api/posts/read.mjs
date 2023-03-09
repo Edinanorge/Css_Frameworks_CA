@@ -1,7 +1,7 @@
 import { url } from "../constants.mjs";
 import { fetchWhitToken } from "./headers.mjs";
 /**
- * This function sends a request to the Api to get posts
+ * This function sends a request to the API to get posts
  * @returns Posts
  * @example
  * ```js
@@ -27,8 +27,8 @@ export async function getPosts() {
 }
 
 /**
- * Send a get reqest to teh Api to get a specific post
- * @param {number} id -Id of the post you want to get from the Api
+ * Send a get request to the API to get a specific post
+ * @param {number} id -Id of the post you want to get from the API
  * @returns the post
  * @example
  * ```js

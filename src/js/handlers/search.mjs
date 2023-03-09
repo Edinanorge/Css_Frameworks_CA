@@ -1,6 +1,10 @@
 import { getPosts } from "../api/posts/read.mjs";
 import { renderPostTemplates } from "../templates/posts.mjs";
 
+/**
+ *
+ */
+
 export async function search() {
   const posts = await getPosts();
 

@@ -2,8 +2,8 @@ import { url } from "../constants.mjs";
 import { fetchWhitToken } from "./headers.mjs";
 
 /**
- * This function send a Post reqest to the API whit the postData
- * @param {Object} postData Is an object collected from a form.
+ * This function send a Post request to the API whit the postData
+ * @param {Object} postData -Object collected from a form.
  * @returns If the respons is oke returns a post whit the data collected form form.
  * @example
  * ```js"
