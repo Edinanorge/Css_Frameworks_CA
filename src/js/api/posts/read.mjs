@@ -15,9 +15,7 @@ export async function getPosts() {
     const response = await fetchWhitToken(getPostsUrl);
 
     if (response.ok) {
-      const posts = await response.json();
-      console.log(posts);
-      return posts;
+      return await response.json();
     } else {
       throw new Error(response.statusText);
     }

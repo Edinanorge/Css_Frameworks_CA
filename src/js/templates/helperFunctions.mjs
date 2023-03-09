@@ -76,7 +76,6 @@ export function createCounter(reaction, symbol, button) {
   if (reaction.symbol === symbol) {
     const counter = createElement("span", ["text-white"]);
     counter.innerText = reaction.count;
-    console.log(counter);
     button.appendChild(counter);
   }
 }

@@ -11,9 +11,8 @@ import { reactPost } from "../api/posts/react.mjs";
 /**
  * This functon makes the template for the displayed posts.
  * @param {object} postData -Post data from the API
- * @returns  HTML 
+ * @returns  HTML
  */
-
 
 export function postTemplate(postData) {
   const container = createElement("div", ["card", "p-0", "feed", "mb-3"]);
@@ -55,11 +54,17 @@ export function postTemplate(postData) {
   cardHeader.appendChild(updatedDate);
 
   const card = createElement("div", ["card-body"]);
-
   container.appendChild(card);
 
-  const title = createParagraf(postData.title, ["card-title", "fs-5", "fw-bolder"]);
-  card.appendChild(title);
+  const titleLink = createLink(`/post/index.html?id=${postData.id}`, "", postData.title, [
+    "card-title",
+    "fs-5",
+    "fw-bolder",
+    "text-white",
+    "text-decoration-none",
+    "title-link",
+  ]);
+  card.appendChild(titleLink);
 
   const body = createParagraf(postData.body, ["mb-3", "text-muted"]);
   card.appendChild(body);
