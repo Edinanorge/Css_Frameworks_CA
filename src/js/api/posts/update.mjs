@@ -1,7 +1,7 @@
 import { url } from "../constants.mjs";
 import { fetchWhitToken } from "./headers.mjs";
 /**
- * This function send a put reqest to the Api whit the data collected from a form
+ * This function send a put request to the API whit the data collected from a form
  * @param {Object} postData This is the data collected from form
  * @returns the new postData whit the updated post
  * @example

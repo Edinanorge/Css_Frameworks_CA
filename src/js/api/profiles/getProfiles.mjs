@@ -24,7 +24,7 @@ export async function getProfiles() {
  * @example
  * ```js
  * getProfile(User)
- * retunrs {name:"User", id:567, title:"Some text", body:"Some more text"}
+ * returns {name:"User", id:567, title:"Some text", body:"Some more text"}
  * ```
  */
 

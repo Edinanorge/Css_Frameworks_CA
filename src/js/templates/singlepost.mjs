@@ -3,9 +3,14 @@ import {
   createElement,
   createParagraf,
   createImage,
-  createButton,
-  createLink,
+  createButton
 } from "./helperFunctions.mjs";
+
+/**
+ * This function creats a html elemet for the single post
+ * @param {*} postData 
+ * @returns 
+ */
 
 export function singlePostTemplate(postData) {
   const container = createElement("div", ["card", "p-0", "feed", "mb-3"]);

@@ -1,5 +1,9 @@
 import * as storage from "../storage/index.mjs";
 
+/**
+ * This function setting the avatar to all of the pages
+ */
+
 export function setAvatar() {
   const user = storage.load("user");
   if (!user) {

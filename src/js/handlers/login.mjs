@@ -1,5 +1,9 @@
 import { login } from "../api/auth/login.mjs";
 
+/**
+ * This function gives a submit event to Login form
+ */
+
 export function submitLoginForm() {
   const form = document.querySelector("#loginForm");
   if (form) {

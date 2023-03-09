@@ -2,10 +2,10 @@ import { url } from "../constants.mjs";
 import { fetchWhitToken } from "./headers.mjs";
 
 /**
- * This function send a post reqest to the Api whit the comment data object 
+ * This function send a post request to the API whit the comment data object
  * @param {object} postData This is the data collected from a form.
- * @returns If the respons oke than return the commnet object.
- * @example 
+ * @returns If the respons oke than return the commnet
+ * @example
  * ```js
  * const comment= {"Hello word"}
  * commnetPost(comment);
