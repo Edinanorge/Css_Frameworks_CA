@@ -4,7 +4,7 @@
 
 This project is built for a JavaScript2 course assignment at Noroff.
 
-### Brief
+## Brief
 
 You have been tasked with producing a new JavaScript front-end client for an existing social media platform. The client application must be attractive and responsive, but you have an otherwise blank slate in terms of theme design language.
 
@@ -35,7 +35,7 @@ The following user stories are optional:
 - User can follow/unfollow a profile
 - User can react to a post content item
 
-### Site architecture:
+## Site architecture:
 
 - Login page
 - Regiter page
@@ -49,7 +49,6 @@ The following user stories are optional:
 - SASS
 - [Bootstrap](https://getbootstrap.com)
 - JavaScript
-  [Trello bord:](https://trello.com/b/Kmrw1xdx/js2-ca)
 
 ## Getting Started
 
@@ -88,3 +87,5 @@ You can contact me.
 Or you can e-mail me.
 
 [edinanorge@gmail.com]
+
+## [Trello bord:](https://trello.com/b/Kmrw1xdx/js2-ca)
