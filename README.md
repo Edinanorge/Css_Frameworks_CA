@@ -4,6 +4,8 @@
 
 This project is built for a JavaScript2 course assignment at Noroff.
 
+## [Trello bord](https://trello.com/b/Kmrw1xdx/js2-ca)
+
 ## Brief
 
 You have been tasked with producing a new JavaScript front-end client for an existing social media platform. The client application must be attractive and responsive, but you have an otherwise blank slate in terms of theme design language.
@@ -87,5 +89,3 @@ You can contact me.
 Or you can e-mail me.
 
 [edinanorge@gmail.com]
-
-## [Trello bord:](https://trello.com/b/Kmrw1xdx/js2-ca)
