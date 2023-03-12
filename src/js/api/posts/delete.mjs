@@ -3,7 +3,7 @@ import { fetchWhitToken } from "./headers.mjs";
 /**
  * This Function sends a delete request to the API
  * @param {number} id -The id of the post you want to delete
- * @returns
+ *
  * @example
  * ```js
  * const post={id:"567",title:"Remove me", body:"Thanks for removeng me."}

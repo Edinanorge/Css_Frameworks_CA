@@ -3,9 +3,8 @@ import { fetchWhitToken } from "../posts/headers.mjs";
 
 /**
  * This function sends a put request to the API to change the profile avatar
- * @param {object} profileData -Data collected from a form name and avatar(URL)
- * @returns
- *
+ * @param {object} profileData -Data collected from a form: name and avatar(URL)
+
  */
 
 export async function updateProfile(profileData) {
